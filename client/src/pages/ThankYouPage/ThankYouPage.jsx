@@ -20,9 +20,9 @@ export default function ThankYouPage({ navigate }) {
   }, [navigate]);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.illustration}>
-        <svg viewBox="0 0 200 120" width="200" height="120" xmlns="http://www.w3.org/2000/svg">
+        <svg aria-hidden="true" viewBox="0 0 200 120" width="200" height="120" xmlns="http://www.w3.org/2000/svg">
           {/* Dotted path loop */}
           <path 
             d="M30,80 C60,110 80,40 100,70 C110,85 130,85 145,65 C155,50 165,40 178,35" 
@@ -62,6 +62,6 @@ export default function ThankYouPage({ navigate }) {
       <p className={styles.countdownText}>
         Redirecting to home in {countdown} Seconds
       </p>
-    </div>
+    </main>
   );
 }

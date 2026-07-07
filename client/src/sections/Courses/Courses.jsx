@@ -25,12 +25,12 @@ export default function Courses({ searchQuery, navigate }) {
   const visible = filteredCourses.slice(0, 4);
 
   return (
-    <section id="courses" className={styles.section}>
+    <section id="courses" className={styles.section} aria-labelledby="courses-heading">
       <div className="container">
         <div className={styles.contentBox}>
           {/* Header row */}
           <div className={`${styles.header} reveal`}>
-            <h2 className={styles.heading}>
+            <h2 id="courses-heading" className={styles.heading}>
               {searchQuery ? `Search Results for "${searchQuery}"` : (
                 <>Explore our <span style={{ color: '#1e3a8a' }}>Most popular Courses</span></>
               )}

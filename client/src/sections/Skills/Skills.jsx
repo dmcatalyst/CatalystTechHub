@@ -3,30 +3,30 @@ import styles from './Skills.module.css';
 import { skills } from '../../data/siteData';
 
 const IconPlaceholder = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
   </svg>
 );
 
 const Skills = () => {
   return (
-    <section className={`section ${styles.skillsSection}`}>
+    <section className={`section ${styles.skillsSection}`} aria-labelledby="skills-title">
       <div className="container">
-        <h2 className={`${styles.sectionTitle} reveal`}>Why Build Your <span style={{ color: '#1e3a8a' }}>Future with Catalyst</span></h2>
+        <h2 id="skills-title" className={`${styles.sectionTitle} reveal`}>Why Build Your <span style={{ color: '#1e3a8a' }}>Future with Catalyst</span></h2>
 
 
         <div className={`${styles.skillsGrid} reveal-group`}>
           {skills.map((skill) => (
-            <div
+            <article
               key={skill.id}
               className={styles.skillCard}
             >
               <div className={styles.iconWrapper}>
-                <img src={skill.icon} alt={skill.title} className={styles.skillIcon} />
+                <img src={skill.icon} alt="" className={styles.skillIcon} aria-hidden="true" loading="lazy" />
               </div>
               <h3 className={styles.skillTitle}>{skill.title}</h3>
               {skill.desc && <p className={styles.skillDesc}>{skill.desc}</p>}
-            </div>
+            </article>
           ))}
         </div>
       </div>

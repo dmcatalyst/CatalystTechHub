@@ -86,14 +86,14 @@ const SuccessStoriesPage = () => {
 
             {/* HERO SECTION */}
 
-            <section className={styles.hero}>
+            <section className={styles.hero} aria-labelledby="success-hero-title">
                 <div className="container">
 
                 {/* Hero Content */}
 
                 <div className={`${styles.heroContent} reveal`}>
 
-                    <h1 className={styles.heroTitle}>
+                    <h1 id="success-hero-title" className={styles.heroTitle}>
                         Begin your Tech Journey with the
                         <span className={styles.gradientText}>
                             best in the field
@@ -112,7 +112,11 @@ const SuccessStoriesPage = () => {
 
                 <div className={styles.imageSection}>
 
-                    <div className={styles.imageCard} onClick={() => setLightboxVideo('Z5uczTHbM3c')}>
+                    <button 
+                        className={styles.imageCard} 
+                        style={{border: 'none', padding: 0, background: 'transparent', textAlign: 'left', cursor: 'pointer', display: 'block'}}
+                        onClick={() => setLightboxVideo('Z5uczTHbM3c')}
+                    >
                         <img
                             src="https://img.youtube.com/vi/Z5uczTHbM3c/maxresdefault.jpg"
                             alt="Success Story 1"
@@ -120,9 +124,13 @@ const SuccessStoriesPage = () => {
                         <div className={styles.playButtonOverlay}>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                    </div>
+                    </button>
 
-                    <div className={styles.imageCard} onClick={() => setLightboxVideo('psAizMpIIhs')}>
+                    <button 
+                        className={styles.imageCard} 
+                        style={{border: 'none', padding: 0, background: 'transparent', textAlign: 'left', cursor: 'pointer', display: 'block'}}
+                        onClick={() => setLightboxVideo('psAizMpIIhs')}
+                    >
                         <img
                             src="https://img.youtube.com/vi/psAizMpIIhs/maxresdefault.jpg"
                             alt="Success Story 2"
@@ -130,9 +138,13 @@ const SuccessStoriesPage = () => {
                         <div className={styles.playButtonOverlay}>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                    </div>
+                    </button>
 
-                    <div className={styles.imageCard} onClick={() => setLightboxVideo('1FIM_oFl56Y')}>
+                    <button 
+                        className={styles.imageCard} 
+                        style={{border: 'none', padding: 0, background: 'transparent', textAlign: 'left', cursor: 'pointer', display: 'block'}}
+                        onClick={() => setLightboxVideo('1FIM_oFl56Y')}
+                    >
                         <img
                             src="https://img.youtube.com/vi/1FIM_oFl56Y/maxresdefault.jpg"
                             alt="Success Story 3"
@@ -140,20 +152,20 @@ const SuccessStoriesPage = () => {
                         <div className={styles.playButtonOverlay}>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                    </div>
+                    </button>
 
                 </div>
 
                 {/* CAREER / TESTIMONIAL SECTION */}
 
-                <div className={styles.careerSection}>
+                <section className={styles.careerSection} aria-labelledby="alumni-title">
 
-                    <h1 className={styles.heroTitle}>
+                    <h2 id="alumni-title" className={styles.heroTitle}>
                         Explore our Alumni's 
                         <span className={styles.gradientText}>
                             Experience
                         </span>
-                    </h1>
+                    </h2>
 
                     <div className={styles.sliderWrapper}>
 
@@ -179,7 +191,7 @@ const SuccessStoriesPage = () => {
 
                                 {[...testimonials, ...testimonials].map((item,index) => (
 
-                                    <div
+                                    <article
                                         className={`${styles.card} ${item.video ? styles.videoCard : ''}`}
                                         key={index}>
                                           
@@ -221,7 +233,12 @@ const SuccessStoriesPage = () => {
                                                     }
                                                 }}
                                             />
-                                            <div className={styles.playPauseOverlay} onClick={(e) => e.currentTarget.previousSibling.click()}>
+                                            <button 
+                                                className={styles.playPauseOverlay} 
+                                                style={{border: 'none', padding: 0, background: 'transparent', cursor: 'pointer'}}
+                                                onClick={(e) => e.currentTarget.previousSibling.click()}
+                                                aria-label={playingVideoIndex === index ? "Pause video" : "Play video"}
+                                            >
                                                 {playingVideoIndex === index ? (
                                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                                                         <rect x="6" y="4" width="4" height="16" />
@@ -232,7 +249,7 @@ const SuccessStoriesPage = () => {
                                                         <polygon points="5 3 19 12 5 21 5 3" />
                                                     </svg>
                                                 )}
-                                            </div>
+                                            </button>
                                             <div className={styles.videoTextOverlay}>
                                                 <p className={styles.videoName}>{item.name}</p>
                                                 <p className={styles.videoRole}>{item.role}</p>
@@ -259,7 +276,7 @@ const SuccessStoriesPage = () => {
 
                                         )}
 
-                                    </div>
+                                    </article>
 
                                 ))}
 
@@ -269,15 +286,15 @@ const SuccessStoriesPage = () => {
 
                     </div>
 
-                </div>
+                </section>
 
                 </div>
             </section>
 
             {/* PLACEMENTS SECTION */}
-            <section className={styles.placementsSection}>
+            <section className={styles.placementsSection} aria-labelledby="placements-title">
                 <div className="container">
-                    <h2 className={styles.placementsTitle}>Our Recent Placements</h2>
+                    <h2 id="placements-title" className={styles.placementsTitle}>Our Recent Placements</h2>
                     <p className={styles.placementsDesc}>
                         Meet our alumni who have successfully transitioned into high-growth tech careers at top-tier companies globally.
                     </p>
@@ -288,11 +305,11 @@ const SuccessStoriesPage = () => {
                         ].map((row, rIdx) => (
                             <div key={rIdx} className={`${styles.placementRow} ${row.className}`}>
                                 {row.data.map((person) => (
-                                    <div key={person.id} className={styles.placementCard}>
+                                    <article key={person.id} className={styles.placementCard}>
                                         <div className={styles.placementImageWrap}>
-                                            <img src={person.img} alt={person.name} className={styles.placementImg} />
+                                            <img src={person.img} alt={person.name} className={styles.placementImg} loading="lazy" />
                                         </div>
-                                    </div>
+                                    </article>
                                 ))}
                             </div>
                         ))}
@@ -302,14 +319,14 @@ const SuccessStoriesPage = () => {
 
             {/* CTA SECTION */}
 
-            <section className={styles.ctaSection}>
+            <section className={styles.ctaSection} aria-labelledby="cta-title">
 
                 <div className="container">
 
                     <div className={styles.ctaGrid}>
 
                         <div className={styles.ctaCardPrimary}>
-                            <h2 className={styles.ctaTitlePrimary}>
+                            <h2 id="cta-title" className={styles.ctaTitlePrimary}>
                                 Interested in a Tech Career For your Future ? We Can help
                             </h2>
                             <p className={styles.ctaDescPrimary}>

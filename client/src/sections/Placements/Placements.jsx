@@ -59,9 +59,9 @@ const Placements = () => {
   }, []);
 
   return (
-    <section className={`section ${styles.placementsSection}`}>
+    <section className={`section ${styles.placementsSection}`} aria-labelledby="placements-title">
       <div className="container">
-        <h2 className={`${styles.sectionTitle} reveal`}>
+        <h2 id="placements-title" className={`${styles.sectionTitle} reveal`}>
           Career Success & <span style={{ color: '#1e3a8a' }}>Placement Achievements</span>
         </h2>
 
@@ -70,13 +70,14 @@ const Placements = () => {
         {/* Desktop Grid (Manual Scroll, 2 Rows) */}
         <div className={styles.desktopGrid}>
           {placementImages.map((image, index) => (
-            <div key={index} className={styles.card}>
+            <figure key={index} className={styles.card}>
               <img
                 src={image}
                 alt={`Placement ${index + 1}`}
                 className={styles.image}
+                loading="lazy"
               />
-            </div>
+            </figure>
           ))}
         </div>
 
@@ -88,13 +89,13 @@ const Placements = () => {
               {Array.from({ length: 4 }).map((_, groupIndex) => (
                 <div key={`r1-group-${groupIndex}`} className={styles.marqueeGroup} aria-hidden={groupIndex > 0 ? "true" : undefined}>
                   {placementImages.slice(0, 5).map((image, index) => (
-                    <div 
+                    <figure 
                       key={`r1-${groupIndex}-${index}`} 
                       ref={groupIndex === 0 && index === 0 ? firstCardRef : null} 
                       className={styles.card}
                     >
-                      <img src={image} alt={`Placement Row 1 ${index + 1}`} className={styles.image} />
-                    </div>
+                      <img src={image} alt={`Placement Row 1 ${index + 1}`} className={styles.image} loading="lazy" />
+                    </figure>
                   ))}
                 </div>
               ))}
@@ -109,9 +110,9 @@ const Placements = () => {
               {Array.from({ length: 4 }).map((_, groupIndex) => (
                 <div key={`r2-group-${groupIndex}`} className={styles.marqueeGroup} aria-hidden={groupIndex > 0 ? "true" : undefined}>
                   {placementImages.slice(5).map((image, index) => (
-                    <div key={`r2-${groupIndex}-${index}`} className={styles.card}>
-                      <img src={image} alt={`Placement Row 2 ${index + 1}`} className={styles.image} />
-                    </div>
+                    <figure key={`r2-${groupIndex}-${index}`} className={styles.card}>
+                      <img src={image} alt={`Placement Row 2 ${index + 1}`} className={styles.image} loading="lazy" />
+                    </figure>
                   ))}
                 </div>
               ))}

@@ -482,11 +482,11 @@ const CourseDetailPage = ({ navigate }) => {
       </section>
 
       {/* Course Overview Section */}
-      <section className={styles.overviewSection}>
+      <section className={styles.overviewSection} aria-labelledby="overview-heading">
         <div className={styles.container}>
           <div className={styles.overviewHeader}>
             <div className={`${styles.overviewHeaderLeft} reveal`}>
-              <h2><span className={styles.highlightBlue}>{course.title}</span> Course with the industry experts</h2>
+              <h2 id="overview-heading"><span className={styles.highlightBlue}>{course.title}</span> Course with the industry experts</h2>
               <p>{course.title} Course with the industry experts in Overview. Learn in-demand tech skills through hands-on training, real-world projects, and expert mentorship designed</p>
             </div>
             <div className={`${styles.overviewHeaderRight} reveal`}>
@@ -668,9 +668,9 @@ const CourseDetailPage = ({ navigate }) => {
       </section>
 
       {/* Partners Section */}
-      <section className={styles.partners}>
+      <section className={styles.partners} aria-labelledby="partners-heading">
         <div className={styles.container}>
-          <h2 className={`${styles.sectionTitle} ${styles.partnersTitle} reveal`}>
+          <h2 id="partners-heading" className={`${styles.sectionTitle} ${styles.partnersTitle} reveal`}>
             Our Placement Partners
           </h2>
           <div className={`${styles.partnersScroll} reveal-group`}>
@@ -683,7 +683,7 @@ const CourseDetailPage = ({ navigate }) => {
       </section>
 
       {/* New Promo Banners */}
-      <section className={styles.newPromoSection}>
+      <section className={styles.newPromoSection} aria-label="Course Highlights">
         <div className={styles.container}>
           <div className={`${styles.newPromoGrid} reveal-group`}>
 
@@ -762,9 +762,9 @@ const CourseDetailPage = ({ navigate }) => {
       <Skills />
 
       {/* Split Info Section */}
-      <section className={styles.splitInfoSection}>
+      <section className={styles.splitInfoSection} aria-labelledby="split-info-heading">
         <div className={styles.container}>
-          <h2 className={`${styles.splitInfoTitle} reveal`}>
+          <h2 id="split-info-heading" className={`${styles.splitInfoTitle} reveal`}>
             <span style={{color: '#1e3a8a'}}>Learn in-demand tech skills</span> through hands-on training, real-world projects
           </h2>
           <div className={`${styles.splitInfoGrid} reveal-group`}>

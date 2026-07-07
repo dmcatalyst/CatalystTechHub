@@ -23,7 +23,7 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
   return (
     <div className={styles.page}>
       {/* Top Header Area */}
-      <div className="container">
+      <header className="container">
         <div className={`${styles.topSection} reveal`}>
           <div className={styles.headerRow}>
             <div className={styles.headingGroup}>
@@ -33,16 +33,16 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
               </p>
             </div>
 
-            <div className={styles.searchBox}>
+            <div className={styles.searchBox} role="search">
               <input
-                type="text"
+                type="search"
                 placeholder="Search Your Course"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={styles.searchInput}
               />
-              <button className={styles.searchBtn}>
-                <FiSearch />
+              <button className={styles.searchBtn} aria-label="Search">
+                <FiSearch aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
             <CourseCard key={course.id} course={course} navigate={navigate} />
           ))}
         </div>
-      </div>
+      </header>
 
       {/* Mentors Section */}
       <div className={styles.mentorsWrapper}>
@@ -67,11 +67,11 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
 
       {/* Bottom Promo Section */}
       <div className="container">
-        <div className={`${styles.promoSection} reveal`}>
+        <section className={`${styles.promoSection} reveal`} aria-labelledby="promo-heading">
           <div className={`${styles.promoContainer} reveal-group`}>
 
             <div className={styles.promoTopRow}>
-              <h2 className={styles.promoHeading}>Explore All Tech Professional Ai Powered Courses</h2>
+              <h2 id="promo-heading" className={styles.promoHeading}>Explore All Tech Professional Ai Powered Courses</h2>
               <div className={styles.statsRow}>
                 <div className={styles.statItem}>
                   <h3 className={styles.statNum}>100%</h3>
@@ -98,6 +98,7 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
                   alt="Students reading"
                   className={styles.promoImg}
+                  loading="lazy"
                 />
               </div>
 
@@ -122,7 +123,7 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
                     btnText: "Explore Facilities"
                   }
                 ].map((item) => (
-                  <div key={item.id} className={styles.feeCard}>
+                  <article key={item.id} className={styles.feeCard}>
                     <h4 className={styles.feeTitle}>{item.title}</h4>
                     <p className={styles.feeDesc}>{item.desc}</p>
                     <button 
@@ -131,13 +132,13 @@ export default function CoursesPage({ searchQuery, setSearchQuery, navigate }) {
                     >
                       {item.btnText}
                     </button>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
 
           </div>
-        </div>
+        </section>
       </div>
 
       {/* Placements Section */}

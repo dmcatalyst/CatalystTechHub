@@ -39,9 +39,9 @@ function AboutPage() {
   return (
     <div className={`${styles.aboutPage} container`}>
       {/* Hero Section */}
-      <section className={`section ${styles.aboutHero}`}>
+      <section className={`section ${styles.aboutHero}`} aria-labelledby="about-hero-title">
         <div className={styles.heroContent}>
-          <h1>
+          <h1 id="about-hero-title">
             Creating the <span>Next Generation of Tech</span> Professionals
           </h1>
 
@@ -61,32 +61,32 @@ function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className={styles.statsSection}>
+      <section className={styles.statsSection} aria-label="Key Statistics">
         {stats.map((item, index) => (
-          <div className={styles.statCard} key={index}>
+          <article className={styles.statCard} key={index}>
             <h2>{item.number}</h2>
             <p>{item.text}</p>
-          </div>
+          </article>
         ))}
       </section>
 
       {/* Mission Section */}
-      <section className={`section ${styles.missionSection}`}>
-        <h2 className={styles.secondheading}>
+      <section className={`section ${styles.missionSection}`} aria-labelledby="mission-title">
+        <h2 id="mission-title" className={styles.secondheading}>
           Shaping the <span>Next Generation of Tech</span>
         </h2>
 
         <div className={styles.missionContainer}>
-          <div
+          <article
             className={`${styles.missionCard} ${styles.light}`}
           >
             <h3>Vission</h3>
             <p>
              To make quality technology education a pathway to meaningful and sustainable careers.
             </p>
-          </div>
+          </article>
 
-          <div
+          <article
             className={`${styles.missionCard} ${styles.dark}`}
           >
             <h3>Mission</h3>
@@ -94,30 +94,30 @@ function AboutPage() {
               To equip learners with industry-ready skills, practical experience, and professional confidence,
                enabling them to successfully transition into high-growth technology careers. 
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
       {/* Features */}
-      <section className={`section ${styles.featuresSection}`}>
-        <h2 className={styles.heading}>
+      <section className={`section ${styles.featuresSection}`} aria-labelledby="features-title">
+        <h2 id="features-title" className={styles.heading}>
           Shaping the <span>Next Generation of Tech</span> Professionals
           Transforming Students into
         </h2>
 
         <div className={styles.featuresGrid}>
           {features.map((item, index) => (
-            <div className={styles.featureCard} key={index}>
+            <article className={styles.featureCard} key={index}>
               <div className={styles.icon}>{item.icon}</div>
               <h4>{item.title}</h4>
               <p>{item.desc}</p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className={`section ${styles.locationsSection}`}>
-        <h2 className={styles.sectionTitle}>Our Campus Locations</h2>
+      <section className={`section ${styles.locationsSection}`} aria-labelledby="locations-title">
+        <h2 id="locations-title" className={styles.sectionTitle}>Our Campus Locations</h2>
 
         <div className={styles.locationsGrid}>
           {centers.map((center) => (
@@ -126,19 +126,19 @@ function AboutPage() {
               href={`/center/${center.slug}`}
               className={styles.locationCard}
             >
-              <img src={center.image} alt={center.name} />
+              <img src={center.image} alt={center.name} loading="lazy" />
               <span>{center.name}</span>
             </a>
           ))}
         </div>
       </section>
 
-      <div className={`section ${styles.boardMembers}`}>
-        <h2 className={styles.sectionTitle}>Meet Our Board Members</h2>
+      <section className={`section ${styles.boardMembers}`} aria-labelledby="board-members-title">
+        <h2 id="board-members-title" className={styles.sectionTitle}>Meet Our Board Members</h2>
         <div className={styles.membersGrid}>
           {boardMembers.map((member) => (
-            <div key={member.id} className={styles.memberCard}>
-              <img src={member.image} alt={member.name} />
+            <article key={member.id} className={styles.memberCard}>
+              <img src={member.image} alt={member.name} loading="lazy" />
 
               <div className={styles.memberOverlay}>
                 <div className={styles.memberContent}>
@@ -157,10 +157,10 @@ function AboutPage() {
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

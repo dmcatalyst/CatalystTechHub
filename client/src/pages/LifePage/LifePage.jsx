@@ -26,7 +26,7 @@ export default function LifePage({ navigate }) {
     }
 
     return (
-      <section className={styles.page}>
+      <article className={styles.page}>
         <div className={styles.container}>
           {/* LEFT CONTENT */}
           <div className={styles.left}>
@@ -40,14 +40,14 @@ export default function LifePage({ navigate }) {
               onClick={() => setSelectedImg(item.image)}
             />
 
-            <section className={styles.section}>
-              <h2 className={styles.heading}>Event Description</h2>
+            <section className={styles.section} aria-labelledby="desc-heading">
+              <h2 id="desc-heading" className={styles.heading}>Event Description</h2>
               <p className={styles.text}>{item.description}</p>
             </section>
           </div>
 
           {/* RIGHT SIDEBAR */}
-          <aside className={styles.sidebar}>
+          <aside className={styles.sidebar} aria-label="Event Details">
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Event Information</h3>
               <ol>
@@ -64,15 +64,17 @@ export default function LifePage({ navigate }) {
                 Stay updated with our cultural events, celebrations, and activities.
               </p>
               <input
-                type="text"
+                type="tel"
                 placeholder="Phone Number"
                 className={styles.input}
+                aria-label="Phone Number"
+                autoComplete="tel"
               />
               <button className={styles.button}>Register Now</button>
             </div>
           </aside>
         </div>
-      </section>
+      </article>
     );
   }
 
@@ -93,9 +95,9 @@ export default function LifePage({ navigate }) {
   return (
     <div className={styles.page}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="life-hero-title">
         <div className="container">
-          <h1 className={styles.heroTitle}>Life @ Catalyst</h1>
+          <h1 id="life-hero-title" className={styles.heroTitle}>Life @ Catalyst</h1>
           <p className={styles.heroDesc}>
             Explore our vibrant student community, classroom sessions, lab training, cultural events, and campus activities at Catalyst.
           </p>
@@ -103,16 +105,16 @@ export default function LifePage({ navigate }) {
       </section>
 
       {/* Main Layout Grid */}
-      <section className={styles.layout}>
+      <section className={styles.layout} aria-label="Life Gallery">
         {/* TOP FILTER TABS */}
-        <div className={styles.sidebarFilters}>
-          <div className={styles.sidebarTitle} style={{ textAlign: 'left', marginBottom: '20px' }}>
+        <nav className={styles.sidebarFilters} aria-labelledby="filters-title">
+          <h2 id="filters-title" className={styles.sidebarTitle} style={{ textAlign: 'left', marginBottom: '20px' }}>
             Categories
-          </div>
+          </h2>
 
           <div className={styles.categoriesRow}>
             {categories.map((category) => (
-                <div
+                <button
                   key={category}
                   ref={(el) => (itemRefs.current[category] = el)}
                   className={`${styles.categoryPill} ${
@@ -129,24 +131,25 @@ export default function LifePage({ navigate }) {
                   }}
                 >
                   {formatCategory(category)}
-                </div>
+                </button>
             ))}
           </div>
-        </div>
+        </nav>
 
         {/* RIGHT GALLERY GRID */}
         <div className={styles.galleryGrid}>
           {filteredLife.map((item) => (
-            <div 
+            <button 
               key={item.id} 
               className={`${styles.galleryCard} ${item.orientation === 'portrait' ? styles.portraitCard : ''}`}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', border: 'none', padding: 0, background: 'transparent', textAlign: 'left', display: 'block' }}
               onClick={() => setSelectedImg(item.image)}
             >
               <img
                 src={item.image}
                 alt={item.thread}
                 className={styles.galleryImage}
+                loading="lazy"
               />
 
               {/* Thread Top Right */}
@@ -160,7 +163,7 @@ export default function LifePage({ navigate }) {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </section>

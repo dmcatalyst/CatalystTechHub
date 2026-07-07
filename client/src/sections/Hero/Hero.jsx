@@ -122,7 +122,7 @@ function OrbitAnimation({ isMobile }) {
 export default function Hero({ navigate }) {
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
       <div className={`container-fluid ${styles.noPadding}`}>
         <div className={styles.heroBox}>
           {/* LEFT */}
@@ -134,7 +134,7 @@ export default function Hero({ navigate }) {
               No.1 Tech Training Institute in Kerala
             </span>
 
-            <h1 className={`${styles.title} reveal reveal-d1`}>
+            <h1 id="hero-title" className={`${styles.title} reveal reveal-d1`}>
               <span className={styles.titleLine1}>Become a Tech Professional</span>
               <span className={styles.titleLine2}>with <span className={styles.titleAccent}>AI&#8209;Powered Skills</span></span>
             </h1>

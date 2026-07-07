@@ -85,7 +85,7 @@ const BlogDetails = ({ navigate }) => {
 
   return (
 
-    <section className={styles.page}>
+    <article className={styles.page}>
 
       <div className={`container ${styles.contentWrapper}`}>
 
@@ -109,9 +109,10 @@ const BlogDetails = ({ navigate }) => {
               key={index}
               className={styles.section}
               id={`section-${index}`}
+              aria-labelledby={`section-heading-${index}`}
             >
 
-              <h2 className={styles.heading}>
+              <h2 id={`section-heading-${index}`} className={styles.heading}>
                 {section.heading}
               </h2>
 
@@ -127,7 +128,7 @@ const BlogDetails = ({ navigate }) => {
 
         {/* RIGHT SIDEBAR */}
 
-        <aside className={styles.sidebar}>
+        <aside className={styles.sidebar} aria-label="Blog sidebar">
 
           <div className={styles.card}>
 
@@ -135,7 +136,8 @@ const BlogDetails = ({ navigate }) => {
               Table of Content
             </h3>
 
-            <ol>
+            <nav aria-label="Table of Contents">
+              <ol>
 
               {content.tableOfContents.map((item,index)=>(
 
@@ -147,7 +149,8 @@ const BlogDetails = ({ navigate }) => {
 
               ))}
 
-            </ol>
+              </ol>
+            </nav>
 
           </div>
 
@@ -179,6 +182,8 @@ const BlogDetails = ({ navigate }) => {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className={styles.input}
+                    aria-label="Phone Number"
+                    autoComplete="tel"
                     required
                   />
 
@@ -203,7 +208,7 @@ const BlogDetails = ({ navigate }) => {
 
       </div>
 
-    </section>
+    </article>
   );
 };
 

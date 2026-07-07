@@ -28,6 +28,7 @@ export default function CourseCard({ course, navigate }) {
       }}
       style={{ textDecoration: 'none', color: 'inherit' }}
     >
+      <article style={{ display: 'contents' }}>
       {/* Image Section */}
       <div className={styles.imageContainer}>
         <img
@@ -104,6 +105,7 @@ export default function CourseCard({ course, navigate }) {
           </span>
         </div>
       </div>
+      </article>
     </a>
   );
 }

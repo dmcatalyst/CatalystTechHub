@@ -23,9 +23,9 @@ export default function BlogPage() {
   return (
     <div className={styles.page}>
 
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="blog-hero-title">
         <div className="container">
-          <h1 className={styles.heroTitle}>
+          <h1 id="blog-hero-title" className={styles.heroTitle}>
             Best Tech career courses in calicut
           </h1>
 
@@ -36,11 +36,9 @@ export default function BlogPage() {
       </section>
 
       <div className="container">
-        <section className={styles.layout}>
-
+        <section className={styles.layout} aria-label="Blog posts">
   <aside className={styles.sidebar}>
-
-    <div
+    <button
       ref={(el) => (itemRefs.current["all"] = el)}
       className={`${styles.courseItem}
       ${selectedCourse === null ? styles.active : ''}`}
@@ -56,10 +54,10 @@ export default function BlogPage() {
       }}
     >
       All Blogs
-    </div>
+    </button>
 
     {courses.map((course) => (
-      <div
+      <button
         key={course.id}
 
         ref={(el) => (itemRefs.current[course.id] = el)}
@@ -78,7 +76,7 @@ export default function BlogPage() {
         }}
       >
         {course.title}
-      </div>
+      </button>
     ))}
 
   </aside>
@@ -86,12 +84,14 @@ export default function BlogPage() {
           {/* RIGHT BLOG GRID */}
           <div className={styles.blogGrid}>
             {filteredBlogs.map(blog => (
-              <div key={blog.id} className={styles.blogCard}>
+              <article key={blog.id} className={styles.blogCard}>
 
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className={styles.blogImage}/>
+                  className={styles.blogImage}
+                  loading="lazy"
+                />
 
                 <div className={styles.blogContent}>
                   <p className={styles.blogDate}>{blog.date} <span className={styles.read}>{blog.read}</span></p>
@@ -111,7 +111,7 @@ export default function BlogPage() {
           </a>
                 </div>
 
-              </div>
+              </article>
             ))}
           </div>
 

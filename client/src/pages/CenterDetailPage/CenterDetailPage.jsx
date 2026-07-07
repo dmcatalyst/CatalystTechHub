@@ -132,7 +132,7 @@ export default function CenterDetailPage({ navigate }) {
   return (
     <div className={styles.centerPage}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="center-hero-title">
         <div className="container">
           <div className={styles.heroGrid}>
             
@@ -141,7 +141,7 @@ export default function CenterDetailPage({ navigate }) {
               <span className={styles.campusBadge}>
                 {center.badge ? `${center.badge} — Catalyst Hub` : 'Offline Campus — Catalyst Hub'}
               </span>
-              <h1 className={styles.heroTitle}>
+              <h1 id="center-hero-title" className={styles.heroTitle}>
                 {center.heroTagline || `Best Tech Career Courses in ${center.name}`}
               </h1>
               <p className={styles.heroDesc}>
@@ -167,6 +167,7 @@ export default function CenterDetailPage({ navigate }) {
                 src={campusLandingImg} 
                 alt="Campus View" 
                 className={styles.mobileHeroImg} 
+                loading="lazy"
               />
               <div className={styles.heroActions}>
                 <button className={styles.exploreBtn} onClick={handleScrollToCourses}>
@@ -206,6 +207,8 @@ export default function CenterDetailPage({ navigate }) {
                         placeholder="Name" 
                         required 
                         className={styles.inputField}
+                        aria-label="Name"
+                        autoComplete="name"
                       />
                     </div>
                     <div className={styles.inputGroup}>
@@ -217,6 +220,8 @@ export default function CenterDetailPage({ navigate }) {
                         placeholder="Phone Number" 
                         required 
                         className={styles.inputField}
+                        aria-label="Phone Number"
+                        autoComplete="tel"
                       />
                     </div>
                     <div className={styles.inputGroup}>
@@ -226,6 +231,7 @@ export default function CenterDetailPage({ navigate }) {
                         onChange={handleInputChange}
                         required 
                         className={styles.selectField}
+                        aria-label="Select Course"
                       >
                         <option value="" disabled>Select Course</option>
                         {offeredCourses.map(c => (
@@ -264,7 +270,7 @@ export default function CenterDetailPage({ navigate }) {
 
       {/* Stats Bar */}
       {center.stats && center.stats.length > 0 && (
-        <section className={styles.statsBar}>
+        <section className={styles.statsBar} aria-label="Center Statistics">
           <div className="container">
             <div className={styles.statsGrid}>
               {center.stats.map((stat, idx) => (
@@ -280,11 +286,11 @@ export default function CenterDetailPage({ navigate }) {
 
       
       {/* Offered Courses Grid */}
-      <section ref={coursesRef} className={styles.coursesSection}>
+      <section ref={coursesRef} className={styles.coursesSection} aria-labelledby="courses-title">
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionSubtitle}>Programs Offered</span>
-            <h2>Master In-Demand Tech Skills</h2>
+            <h2 id="courses-title">Master In-Demand Tech Skills</h2>
           </div>
           
           {offeredCourses.length > 0 ? (
@@ -302,10 +308,10 @@ export default function CenterDetailPage({ navigate }) {
       </section>
 
       {/* Map and Contact Details Section */}
-      <section className={styles.contactMapSection}>
+      <section className={styles.contactMapSection} aria-labelledby="contact-title">
   <div className="container">
 
-    <h2 className={styles.sectionTitle}>Campus Near You</h2>
+    <h2 id="contact-title" className={styles.sectionTitle}>Campus Near You</h2>
 
     <div className={styles.contactMapGrid}>
 

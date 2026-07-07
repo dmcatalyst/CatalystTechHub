@@ -100,13 +100,13 @@ export default function Contact({ navigate }) {
   };
 
   return (
-    <section id="contact" className={styles.section}>
+    <section id="contact" className={styles.section} aria-labelledby="contact-heading">
       <div className="container">
         <div className={styles.contactWrapper}>
 
           {/* Left Info Card */}
           <div className={`${styles.infoCard} reveal`}>
-            <h2 className={styles.title}>Discuss Your<br />Concerns With us..</h2>
+            <h2 id="contact-heading" className={styles.title}>Discuss Your<br />Concerns With us..</h2>
             <p className={styles.sub}>
               Have questions about our courses? Fill out the form and our team
               will get back to you with the right guidance.
@@ -115,7 +115,7 @@ export default function Contact({ navigate }) {
             <div className={styles.contactInfo}>
               <a href="mailto:hello@catalysthub.in" className={styles.infoItem}>
                 <div className={styles.iconWrapper}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
@@ -128,7 +128,7 @@ export default function Contact({ navigate }) {
 
               <a href="tel:+91 9037946833" className={styles.infoItem}>
                 <div className={styles.iconWrapper}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                 </div>
@@ -175,48 +175,55 @@ export default function Contact({ navigate }) {
             <form onSubmit={handleSubmit}>
 
               <div className={styles.formGroup}>
-                <label className={styles.label}>
+                <label htmlFor="contact-name" className={styles.label}>
                   <span className={styles.requiredStar}>*</span> Name
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   value={form.name}
                   onChange={handleChange('name')}
                   className={styles.input}
                   placeholder="Your full name"
+                  autoComplete="name"
                   required
                 />
               </div>
 
               <div className={styles.twoCol}>
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>
+                  <label htmlFor="contact-phone" className={styles.label}>
                     <span className={styles.requiredStar}>*</span> Phone Number
                   </label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     value={form.phone}
                     onChange={handleChange('phone')}
                     className={styles.input}
                     placeholder="+91 00000 00000"
+                    autoComplete="tel"
                     required
                   />
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>Email ID</label>
+                  <label htmlFor="contact-email" className={styles.label}>Email ID</label>
                   <input
+                    id="contact-email"
                     type="email"
                     value={form.email}
                     onChange={handleChange('email')}
                     className={styles.input}
                     placeholder="you@example.com"
+                    autoComplete="email"
                   />
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>Course</label>
+                  <label htmlFor="contact-course" className={styles.label}>Course</label>
                   <select
+                    id="contact-course"
                     value={form.course}
                     onChange={handleChange('course')}
                     className={styles.input}
@@ -231,8 +238,9 @@ export default function Contact({ navigate }) {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label className={styles.label}>Center</label>
+                  <label htmlFor="contact-center" className={styles.label}>Center</label>
                   <select
+                    id="contact-center"
                     value={form.center}
                     onChange={handleChange('center')}
                     className={styles.input}

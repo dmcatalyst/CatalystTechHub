@@ -6,7 +6,7 @@ import parthivVideo from '../../assets/videos/parthiv.mp4';
 import adithVideo from '../../assets/videos/adith.mp4';
 
 const PlayIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="#ffffff" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.85 }}>
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="#ffffff" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.85 }}>
     <polygon points="5 3 19 12 5 21 5 3"></polygon>
   </svg>
 );
@@ -62,7 +62,7 @@ const Testimonials = () => {
   const renderCard = (item, suffix) => {
     if (item.isVideo) {
       return (
-        <div key={`${item.id}-${suffix}`} className={styles.videoCard} onClick={() => setSelectedVideo(item.videoUrl)} style={{ cursor: 'pointer' }}>
+        <article key={`${item.id}-${suffix}`} className={styles.videoCard} onClick={() => setSelectedVideo(item.videoUrl)} style={{ cursor: 'pointer' }}>
           <div className={styles.videoThumbnailContainer}>
             <video src={item.videoUrl} preload="metadata" className={styles.cardVideoThumbnail} muted />
             <div className={styles.videoCardOverlay}>
@@ -73,11 +73,11 @@ const Testimonials = () => {
             <h4 className={styles.videoCardName}>{item.name}</h4>
             <p className={styles.videoCardRole}>{item.role}</p>
           </div>
-        </div>
+        </article>
       );
     }
     return (
-      <div key={`${item.id}-${suffix}`} className={styles.card}>
+      <article key={`${item.id}-${suffix}`} className={styles.card}>
         <div className={styles.cardHeader}>
           {item.image ? (
             <img src={item.image} alt={item.name} className={styles.avatar} />
@@ -90,14 +90,14 @@ const Testimonials = () => {
           </div>
         </div>
         <p className={styles.cardText}>{item.text}</p>
-      </div>
+      </article>
     );
   };
  
   return (
-    <section className={styles.testimonialsSection}>
+    <section className={styles.testimonialsSection} aria-labelledby="testimonials-title">
       <div className="container">
-        <h2 className={`${styles.sectionTitle} reveal`}>What Our Alumni Says</h2>
+        <h2 id="testimonials-title" className={`${styles.sectionTitle} reveal`}>What Our Alumni Says</h2>
       </div>
  
       <div className={`${styles.marqueeContainer} reveal`}>

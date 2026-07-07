@@ -241,7 +241,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
          Join our upcoming batch. Admissions closing soon.
       </div>
     )}
-      <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${!showTopBar ? styles.navNoTopBar : ''}`}>
+      <nav aria-label="Primary Navigation" className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${!showTopBar ? styles.navNoTopBar : ''}`}>
         <div className={styles.inner}>
 
           {/* HAMBURGER — mobile/tablet only */}
@@ -254,6 +254,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
               }}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
             >
               <span />
               <span />
@@ -267,7 +268,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
             className={styles.logoLink}
             onClick={(e) => { e.preventDefault(); navigate('/'); }}
           >
-            <img src={logo} alt="Logo" className={styles.logo} />
+            <img src={logo} alt="Catalyst Tech Hub Logo" className={styles.logo} />
           </a>
 
           {/* SEARCH — hidden on mobile, shown ≥ 680px */}
@@ -420,6 +421,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
       {/* MOBILE MENU — slides in from right */}
       {!isMinimalNavbar && (
         <div
+          id="mobile-menu"
           className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''} ${
             menuDirection === 'left' ? styles.slideLeft : styles.slideRight
           }`}
@@ -427,7 +429,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
         >
           {/* Techhub logo at top */}
           <div className={styles.mobilePanelHeader}>
-            <img src={techhub} alt="TechHub" className={styles.mobilePanelLogo} />
+            <img src={techhub} alt="TechHub Logo" className={styles.mobilePanelLogo} />
             <button
               className={styles.closeBtn}
               onClick={closeMenu}
@@ -487,55 +489,58 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
             </div>
           ) : (
             /* Mobile navigation links */
-            <>
-              {navLinks.map((link) => (
-                <div key={link.label} className={styles.mobileLinkContainer}>
-                  {link.subLinks ? (
-                    <>
-                      <button
-                        onClick={() => toggleMobileDropdown(link.label)}
-                        className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${activeDropdown === link.label ? styles.active : ''}`}
+            <nav aria-label="Mobile Navigation">
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {navLinks.map((link) => (
+                  <li key={link.label} className={styles.mobileLinkContainer}>
+                    {link.subLinks ? (
+                      <>
+                        <button
+                          onClick={() => toggleMobileDropdown(link.label)}
+                          className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${activeDropdown === link.label ? styles.active : ''}`}
+                          aria-expanded={activeDropdown === link.label}
+                        >
+                          {link.label}
+                          <FiChevronDown className={`${styles.mobileChevron} ${activeDropdown === link.label ? styles.rotate : ''}`} />
+                        </button>
+                        <ul className={`${styles.mobileSubLinks} ${activeDropdown === link.label ? styles.show : ''}`} style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                          {link.subLinks.map((sub) => (
+                            <li key={sub.label}>
+                              <a
+                                href={sub.href}
+                                onClick={(e) => {
+                                  closeMenu();
+                                  if (sub.href.startsWith('/')) {
+                                    e.preventDefault();
+                                    navigate(sub.href);
+                                  }
+                                }}
+                                className={styles.mobileSubLink}
+                              >
+                                {sub.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
+                          closeMenu();
+                          if (link.href.startsWith('/')) {
+                            e.preventDefault();
+                            navigate(link.href);
+                          }
+                        }}
+                        className={styles.mobileLink}
                       >
                         {link.label}
-                        <FiChevronDown className={`${styles.mobileChevron} ${activeDropdown === link.label ? styles.rotate : ''}`} />
-                      </button>
-                      <div className={`${styles.mobileSubLinks} ${activeDropdown === link.label ? styles.show : ''}`}>
-                        {link.subLinks.map((sub) => (
-                          <a
-                            key={sub.label}
-                            href={sub.href}
-                            onClick={(e) => {
-                              closeMenu();
-                              if (sub.href.startsWith('/')) {
-                                e.preventDefault();
-                                navigate(sub.href);
-                              }
-                            }}
-                            className={styles.mobileSubLink}
-                          >
-                            {sub.label}
-                          </a>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <a
-                      href={link.href}
-                      onClick={(e) => {
-                        closeMenu();
-                        if (link.href.startsWith('/')) {
-                          e.preventDefault();
-                          navigate(link.href);
-                        }
-                      }}
-                      className={styles.mobileLink}
-                    >
-                      {link.label}
-                    </a>
-                  )}
-                </div>
-              ))}
-
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
               {/* CTA */}
               <button 
                 onClick={() => {
@@ -546,7 +551,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
               >
                 Talk With Expert
               </button>
-            </>
+            </nav>
           )}
         </div>
       )}

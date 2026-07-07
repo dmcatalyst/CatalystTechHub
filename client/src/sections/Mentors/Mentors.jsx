@@ -6,19 +6,19 @@ import { mentors } from '../../data/siteData';
 const Mentors = () => {
 
   return (
-    <section className={`section ${styles.mentorsSection}`}>
+    <section className={`section ${styles.mentorsSection}`} aria-labelledby="mentors-title">
       <div className="container">
-        <h2 className={`${styles.sectionTitle} reveal`}>Learn From the <span style={{ color: '#1e3a8a' }}>Best Faculties</span></h2>
+        <h2 id="mentors-title" className={`${styles.sectionTitle} reveal`}>Learn From the <span style={{ color: '#1e3a8a' }}>Best Faculties</span></h2>
 
 
         <div className={`${styles.mentorsGrid} reveal-group`}>
           {mentors.map((mentor, index) => (
-            <div
+            <article
               key={mentor.id}
               className={styles.mentorCard}
             >
               <div className={styles.imagePlaceholder}>
-                <img src={mentor.image} alt={mentor.name} className={styles.mentorImage} />
+                <img src={mentor.image} alt={mentor.name} className={styles.mentorImage} loading="lazy" />
               </div>
               <div className={styles.cardContent}>
                 <h3 className={styles.mentorName}>{mentor.name}</h3>
@@ -26,7 +26,7 @@ const Mentors = () => {
                 {/* <a href="#" className={styles.workAtLink}>Work @</a> */}
                 <p className={styles.mentorDesc}>{mentor.description}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

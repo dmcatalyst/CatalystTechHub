@@ -43,9 +43,9 @@ const FAQ = () => {
   };
 
   return (
-    <section className={styles.faqSection} id="faq">
+    <section className={styles.faqSection} id="faq" aria-labelledby="faq-title">
       <div className="container">
-        <h2 className={`${styles.sectionTitle} reveal`}>Frequently Asked Questions</h2>
+        <h2 id="faq-title" className={`${styles.sectionTitle} reveal`}>Frequently Asked Questions</h2>
 
         <div className={styles.faqContainer}>
           {/* Sidebar */}
@@ -73,6 +73,7 @@ const FAQ = () => {
                   className={styles.questionWrapper}
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <h3 className={styles.question}>{faq.question}</h3>
                   <span className={styles.icon}>
@@ -80,7 +81,7 @@ const FAQ = () => {
                   </span>
                 </button>
 
-                <div className={`${styles.answerWrapper} ${openIndex === index ? styles.open : ''}`}>
+                <div id={`faq-answer-${index}`} className={`${styles.answerWrapper} ${openIndex === index ? styles.open : ''}`}>
                   <ul className={styles.bulletList}>
                     {faq.bullets.map((bullet, idx) => (
                       <li key={idx} className={styles.bulletItem}>{bullet}</li>
