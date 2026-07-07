@@ -28,26 +28,67 @@ export const captureUTMs = () => {
     }
   });
 
-  // Determine Traffic Source
+  // Determine Traffic Source, Medium, and Type
   let trafficSource = 'Unknown';
-  if (hasUTMs) {
-    trafficSource = 'Campaign';
-  } else if (hasClickIds) {
-    if (params.has('gclid')) trafficSource = 'Google Ads';
-    else if (params.has('fbclid')) trafficSource = 'Facebook Ads';
-    else if (params.has('msclkid')) trafficSource = 'Bing Ads';
-  } else if (referrer) {
-    const ref = referrer.toLowerCase();
-    if (ref.includes('google.')) trafficSource = 'Google Organic';
-    else if (ref.includes('bing.')) trafficSource = 'Bing Organic';
-    else if (ref.includes('facebook.com') || ref.includes('instagram.com')) trafficSource = 'Social Referral';
-    else if (ref.includes('linkedin.com')) trafficSource = 'LinkedIn Referral';
-    else trafficSource = 'Referral';
+  let trafficMedium = 'Unknown';
+  let trafficType = 'Unknown';
+
+  const uSource = (params.get('utm_source') || '').toLowerCase();
+  const uMedium = (params.get('utm_medium') || '').toLowerCase();
+  const ref = referrer ? referrer.toLowerCase() : '';
+
+  if (uSource === 'google' && (uMedium === 'cpc' || params.has('gclid')) || params.has('gclid')) {
+    trafficSource = 'Google';
+    trafficMedium = 'Paid Search';
+    trafficType = 'Google Ads';
+  } else if (uSource === 'facebook' && (uMedium === 'paid_social' || params.has('fbclid')) || params.has('fbclid')) {
+    trafficSource = 'Facebook';
+    trafficMedium = 'Paid Social';
+    trafficType = 'Facebook Ads';
+  } else if (uSource === 'instagram' && uMedium === 'paid_social') {
+    trafficSource = 'Instagram';
+    trafficMedium = 'Paid Social';
+    trafficType = 'Instagram Ads';
+  } else if (uSource === 'linkedin' && uMedium === 'cpc') {
+    trafficSource = 'LinkedIn';
+    trafficMedium = 'Paid Social';
+    trafficType = 'LinkedIn Ads';
+  } else if (hasUTMs) {
+    trafficSource = params.get('utm_source') || 'Unknown';
+    trafficMedium = params.get('utm_medium') || 'Unknown';
+    trafficType = 'Custom Campaign';
+  } else if (ref) {
+    if (ref.includes('google.')) {
+      trafficSource = 'Google';
+      trafficMedium = 'Organic Search';
+      trafficType = 'Google Organic';
+    } else if (ref.includes('bing.')) {
+      trafficSource = 'Bing';
+      trafficMedium = 'Organic Search';
+      trafficType = 'Bing Organic';
+    } else if (ref.includes('facebook.com') || ref.includes('instagram.com') || ref.includes('t.co') || ref.includes('twitter.com') || ref.includes('linkedin.com')) {
+      trafficSource = ref.includes('facebook') ? 'Facebook' : ref.includes('instagram') ? 'Instagram' : ref.includes('linkedin') ? 'LinkedIn' : 'Social';
+      trafficMedium = 'Referral';
+      trafficType = 'Social Referral';
+    } else {
+      try {
+        const url = new URL(ref);
+        trafficSource = url.hostname;
+      } catch (e) {
+        trafficSource = ref;
+      }
+      trafficMedium = 'Referral';
+      trafficType = 'Referral';
+    }
   } else {
     trafficSource = 'Direct';
+    trafficMedium = 'Direct';
+    trafficType = 'Direct Visit';
   }
 
   sessionStorage.setItem('traffic_source', trafficSource);
+  sessionStorage.setItem('traffic_medium', trafficMedium);
+  sessionStorage.setItem('traffic_type', trafficType);
   sessionStorage.setItem('landing_page', currentUrl);
   sessionStorage.setItem('document_referrer', referrer || 'None');
   sessionStorage.setItem('first_visit_time', new Date().toISOString());
@@ -56,6 +97,8 @@ export const captureUTMs = () => {
   if (localStorage.getItem('DEBUG_ATTRIBUTION')) {
     console.log('Attribution Captured:', {
       trafficSource,
+      trafficMedium,
+      trafficType,
       landingPage: currentUrl,
       referrer: referrer || 'None',
       timestamp: sessionStorage.getItem('first_visit_time'),
@@ -78,6 +121,8 @@ export const captureUTMs = () => {
 export const getUTMs = () => {
   return {
     traffic_source: sessionStorage.getItem('traffic_source') || 'Unknown',
+    traffic_medium: sessionStorage.getItem('traffic_medium') || 'Unknown',
+    traffic_type: sessionStorage.getItem('traffic_type') || 'Unknown',
     landing_page: sessionStorage.getItem('landing_page') || 'Unknown',
     referrer: sessionStorage.getItem('document_referrer') || 'Unknown',
     timestamp: sessionStorage.getItem('first_visit_time') || new Date().toISOString(),

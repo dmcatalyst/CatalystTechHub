@@ -19,6 +19,8 @@ export default async function handler(req, res) {
       pageUrl,
       turnstileToken,
       traffic_source,
+      traffic_medium,
+      traffic_type,
       landing_page,
       referrer,
       timestamp,
@@ -54,7 +56,7 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "hello@catalysthub.in",
-      subject: `New Lead: ${name} (${traffic_source || 'Unknown Source'})`,
+      subject: `New Lead: ${name} (${traffic_type || 'Unknown Source'})`,
       html: `
         <div style="font-family: sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
           <h2 style="color: #2563eb; margin-top: 0;">New Lead Details</h2>
@@ -70,7 +72,9 @@ export default async function handler(req, res) {
 
           <h2 style="color: #2563eb; margin-top: 30px;">Traffic Summary</h2>
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px;">
-            <tr><td style="padding: 6px 0; color: #555; width: 120px;">Traffic Source</td><td style="padding: 6px 0;"><strong>${traffic_source || 'N/A'}</strong></td></tr>
+            <tr><td style="padding: 6px 0; color: #555; width: 120px;">Traffic Type</td><td style="padding: 6px 0;"><strong>${traffic_type || 'N/A'}</strong></td></tr>
+            <tr><td style="padding: 6px 0; color: #555;">Source</td><td style="padding: 6px 0;"><strong>${traffic_source || 'N/A'}</strong></td></tr>
+            <tr><td style="padding: 6px 0; color: #555;">Medium</td><td style="padding: 6px 0;"><strong>${traffic_medium || 'N/A'}</strong></td></tr>
             <tr><td style="padding: 6px 0; color: #555;">Landing Page</td><td style="padding: 6px 0; word-break: break-all;">${landing_page || 'N/A'}</td></tr>
             <tr><td style="padding: 6px 0; color: #555;">Current Page</td><td style="padding: 6px 0; word-break: break-all;">${current_page || pageUrl || 'N/A'}</td></tr>
             <tr><td style="padding: 6px 0; color: #555;">Referrer</td><td style="padding: 6px 0; word-break: break-all;">${referrer || 'N/A'}</td></tr>
