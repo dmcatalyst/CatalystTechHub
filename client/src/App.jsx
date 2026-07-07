@@ -8,6 +8,7 @@ import Navbar     from './components/Navbar/Navbar';
 import WhatsAppWidget from './components/WhatsAppWidget/WhatsAppWidget';
 import MobileActionBar from './components/MobileActionBar/MobileActionBar';
 import Breadcrumb from './components/Breadcrumb/Breadcrumb';
+import { captureUTMs } from './utils/getUTMs';
 
 // Page sections
 import Hero    from './sections/Hero/Hero';
@@ -76,15 +77,9 @@ export default function App() {
     return () => window.removeEventListener('openModal', handleOpenModal);
   }, []);
 
-  // Capture UTM parameters
+  // Capture attribution on app initialization
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-    utms.forEach(param => {
-      if (params.has(param)) {
-        sessionStorage.setItem(param, params.get(param));
-      }
-    });
+    captureUTMs();
   }, []);
 
   useEffect(() => {
