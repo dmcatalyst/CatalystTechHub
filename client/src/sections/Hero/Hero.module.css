@@ -530,10 +530,10 @@
   .tags {
     width: 100%;
     max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
-    gap: 4px;
+    gap: 6px;
     padding-bottom: 2px;
   }
   .tags span {
@@ -541,6 +541,7 @@
     font-size: 0.7rem;
     padding: 4px 8px;
     border-width: 1px;
+    text-align: center;
   }
 
   .companies {

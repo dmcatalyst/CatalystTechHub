@@ -662,12 +662,15 @@
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
+  list-style: none;
+  margin: 0;
+  gap: 0.5rem;
 }
 
 .mobileSubLinks.show {
   max-height: 500px; /* Large enough for the list */
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 1.2rem;
 }
 
 .mobileSubLink {

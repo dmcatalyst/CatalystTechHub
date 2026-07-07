@@ -503,7 +503,7 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
                           {link.label}
                           <FiChevronDown className={`${styles.mobileChevron} ${activeDropdown === link.label ? styles.rotate : ''}`} />
                         </button>
-                        <ul className={`${styles.mobileSubLinks} ${activeDropdown === link.label ? styles.show : ''}`} style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                        <ul className={`${styles.mobileSubLinks} ${activeDropdown === link.label ? styles.show : ''}`}>
                           {link.subLinks.map((sub) => (
                             <li key={sub.label}>
                               <a
