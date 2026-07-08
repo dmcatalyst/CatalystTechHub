@@ -18,7 +18,9 @@ const Mentors = () => {
               className={styles.mentorCard}
             >
               <div className={styles.imagePlaceholder}>
-                <img src={mentor.image} alt={mentor.name} className={styles.mentorImage} loading="lazy" />
+                {mentor.image && mentor.image !== "#" && (
+                  <img src={mentor.image} alt={mentor.name} className={styles.mentorImage} loading="lazy" />
+                )}
               </div>
               <div className={styles.cardContent}>
                 <h3 className={styles.mentorName}>{mentor.name}</h3>

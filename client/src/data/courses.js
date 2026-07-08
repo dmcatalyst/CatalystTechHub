@@ -1,4 +1,7 @@
-import list from '../assets/list.png'
+import list1 from '../assets/courselisting/list1.jpeg'
+import list2 from '../assets/courselisting/list2.jpeg'
+import list3 from '../assets/courselisting/list3.jpeg'
+import list4 from '../assets/courselisting/list4.jpeg'
 
 export const courses = [
 
@@ -11,7 +14,7 @@ export const courses = [
   duration: "8 months",
   fee: "₹99,999",
   rating: "4.9",
-  img: list,
+  img: list4,
 
   whatYouWillLearn: [
     {
@@ -230,7 +233,7 @@ export const courses = [
   duration: "6 months",
   fee: "₹89,999",
   rating: "4.9",
-  img: list,
+  img: list2,
 
   whatYouWillLearn: [
     {
@@ -431,7 +434,7 @@ export const courses = [
   duration: "6 months",
   fee: "₹89,999",
   rating: "4.9",
-  img: list,
+  img: list3,
 
   whatYouWillLearn: [
     {
@@ -632,7 +635,7 @@ export const courses = [
   duration: "8 months",
   fee: "₹94,999",
   rating: "4.9",
-  img: list,
+  img: list1,
 
   whatYouWillLearn: [
     {

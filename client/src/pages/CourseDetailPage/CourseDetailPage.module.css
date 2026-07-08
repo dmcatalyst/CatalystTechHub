@@ -387,19 +387,31 @@
 }
 
 .partnersScroll {
+  background: #e7e9fcbd;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 0.5rem;
   display: flex;
-  gap: clamp(30px, 4vw, 60px);
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  opacity: 1; /* Increased visibility */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
 .partnerLogo {
-  height: clamp(24px, 3.5vw, 36px);
-  max-width: 120px;
+  height: clamp(26px, 4vw, 42px);
+  width: auto;
+  max-width: 140px;
   object-fit: contain;
+  opacity: 1;
+  filter: contrast(1.1) saturate(1.1);
+  transition: all 0.3s ease;
 }
 
 /* 5. Learning Sessions */
@@ -868,13 +880,7 @@
     padding: 32px;
   }
 
-  .partnersScroll {
-    gap: 60px;
-  }
 
-  .partnerLogo {
-    height: 32px;
-  }
 
   .learnGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -1581,25 +1587,6 @@
   font-size: 1rem;
   font-weight: 500;
   color: #475569;
-}
-
-/* Partners Section */
-.partners {
-  padding: 20px 0 40px 0;
-  background-color: #fff;
-}
-.partnersScroll {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.partnerLogo {
-  height: 35px;
-  width: auto;
-  max-width: 120px;
-  object-fit: contain;
 }
 
 /* New Promo Banners */
@@ -2439,5 +2426,23 @@
 
   .newPromoBtn {
     width: 100%;
+  }
+}
+
+/* Partners Mobile Styles Match */
+@media (max-width: 1100px) {
+  .partnersScroll {
+    justify-content: center;
+  }
+}
+@media (max-width: 860px) {
+  .partnersScroll {
+    border-radius: 16px;
+    gap: 1.5rem 2rem;
+  }
+}
+@media (max-width: 420px) {
+  .partnersScroll {
+    gap: 1.25rem 1rem;
   }
 }

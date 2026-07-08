@@ -838,11 +838,15 @@ const CourseDetailPage = ({ navigate }) => {
             {mentors.map((mentor, i) => (
               <div key={mentor.id || i} className={styles.mentorCard}>
                 <div className={styles.mentorTop}>
-                  <img 
-                    src={mentor.image && mentor.image !== '#' ? mentor.image : `https://i.pravatar.cc/300?u=mentor${mentor.id || i}`} 
-                    alt={mentor.name} 
-                    className={styles.mentorImg} 
-                  />
+                  {mentor.image && mentor.image !== '#' && mentor.image !== '' ? (
+                    <img 
+                      src={mentor.image} 
+                      alt={mentor.name} 
+                      className={styles.mentorImg} 
+                    />
+                  ) : (
+                    <div style={{ width: '100%', height: '100%', backgroundColor: '#f1f5fb' }} />
+                  )}
                 </div>
                 <div className={styles.mentorInfo}>
                   <h4>{mentor.name}</h4>

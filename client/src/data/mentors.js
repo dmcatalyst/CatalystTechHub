@@ -27,7 +27,7 @@ export const mentors = [
     name: "Sahla Nargees P",
     title: "English Communication & Soft Skills Trainer",
     description: "With over 2 years of experience in English language and soft skills training, Sahla has mentored 150+ learners ranging from school students to graduate job seekers and working professionals. ",
-    image: "#"
+    image: ""
   },
 ];
 
