@@ -13,7 +13,8 @@ export const courses = [
   desc: "Become a job-ready Full Stack Python Developer by mastering frontend development, backend development, databases, REST APIs, cloud deployment, and DevOps practices. Build real-world projects using HTML, CSS, JavaScript, React, Python, Django, PostgreSQL, Docker, Git, CI/CD, AWS, and modern deployment workflows.",
   duration: "8 months",
   fee: "₹99,999",
-  rating: "4.9",
+  rating: "4.8",
+  reviews: "4.2k",
   img: list4,
 
   whatYouWillLearn: [
@@ -233,6 +234,7 @@ export const courses = [
   duration: "6 months",
   fee: "₹89,999",
   rating: "4.9",
+  reviews: "5.1k",
   img: list2,
 
   whatYouWillLearn: [
@@ -433,7 +435,8 @@ export const courses = [
   desc: "Build a successful career in Cyber Security by mastering networking, ethical hacking, penetration testing, vulnerability assessment, digital forensics, cloud security, SIEM, incident response, and security best practices. Gain hands-on experience with real-world cyber attack simulations and industry-standard security tools.",
   duration: "6 months",
   fee: "₹89,999",
-  rating: "4.9",
+  rating: "4.7",
+  reviews: "3.8k",
   img: list3,
 
   whatYouWillLearn: [
@@ -635,6 +638,7 @@ export const courses = [
   duration: "8 months",
   fee: "₹94,999",
   rating: "4.9",
+  reviews: "4.5k",
   img: list1,
 
   whatYouWillLearn: [

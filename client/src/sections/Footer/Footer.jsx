@@ -146,6 +146,7 @@ export default function Footer({ navigate }) {
           <nav aria-label="Campus Locations" className={styles.campusList}>
             <a href="/center/calicut" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/calicut'); }}>Calicut</a>
             <span className={styles.divider}>|</span>
+            {/*
             <a href="/center/kannur" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/kannur'); }}>Kannur</a>
             <span className={styles.divider}>|</span>
             <a href="/center/thrissur" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/thrissur'); }}>Thrissur</a>
@@ -160,7 +161,8 @@ export default function Footer({ navigate }) {
             <span className={styles.divider}>|</span>
             <a href="/center/kottakkal" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/kottakkal'); }}>Kottakkal</a>
             <span className={styles.divider}>|</span>
-            <a href="/center/ernakulam" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/ernakulam'); }}>Ernakulam</a>
+            */}
+            <a href="/center/ernakulam" className={styles.campusLink} onClick={(e) => { e.preventDefault(); navigate('/center/ernakulam'); }}>Kochi</a>
           </nav>
         </div>
       </div>

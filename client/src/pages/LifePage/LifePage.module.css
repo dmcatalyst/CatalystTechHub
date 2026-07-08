@@ -14,15 +14,15 @@
 }
 
 .heroTitle {
-  font-size: clamp(1.8rem, 3vw, 2rem);
-  font-weight: 550;
-  line-height: 1.1;
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   color: #000000;
 }
 
 .heroDesc {
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #64748b;
   max-width: 600px;
   line-height: 1.6;
@@ -50,8 +50,8 @@
 }
 
 .sidebarTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  font-weight: 700;
   margin-bottom: 1.25rem;
   color: #0f172a;
 }
@@ -290,7 +290,7 @@
 
 .title {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-weight: 700;
   line-height: 1.3;
   margin-top: 2rem;
@@ -313,7 +313,8 @@
 
 .heading {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.7rem;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  font-weight: 700;
   margin-bottom: 1rem;
   color: #0f172a;
 }

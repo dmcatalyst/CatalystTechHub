@@ -891,3 +891,54 @@
     height: 280px;
   }
 }
+
+.avatarBadge {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.avatarText {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #1e1b4b;
+  line-height: 1.2;
+}
+
+.ratingStars {
+  font-weight: 600;
+  color: #1e1b4b;
+}
+
+.starsColor {
+  color: #fbbf24;
+}
+
+.fakeLink {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}

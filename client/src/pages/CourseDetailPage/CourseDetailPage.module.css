@@ -148,6 +148,22 @@
   line-height: 1.2;
 }
 
+.ratingStars {
+  font-weight: 600;
+  color: #1e1b4b;
+}
+
+.starsColor {
+  color: #fbbf24;
+}
+
+.fakeLink {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .mobileHeroBtn {
   display: block;
   width: 100%;
@@ -177,7 +193,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   transition: all 0.2s ease;
 }
 
@@ -848,7 +864,10 @@
     z-index: 10;
   }
 
-
+  .infoLabel,
+  .infoValue {
+    white-space: nowrap;
+  }
   .infoValue {
     font-size: 1.15rem;
   }
@@ -2439,6 +2458,22 @@
   .partnersScroll {
     border-radius: 16px;
     gap: 1.5rem 2rem;
+  }
+  .infoBar {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .partners {
+    padding: 0 0 10px 0;
+  }
+  .overviewSection {
+    padding-top: 10px;
+  }
+  .hero {
+    padding-bottom: 20px;
+  }
+  .heroBox {
+    padding-bottom: 10px;
   }
 }
 @media (max-width: 420px) {

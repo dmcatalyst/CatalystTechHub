@@ -88,6 +88,8 @@
   margin-bottom:0.70rem;
 
   color:#334155;
+  width: 100%;
+  text-align: left;
 }
 
 .active{

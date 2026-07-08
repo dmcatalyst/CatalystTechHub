@@ -5,6 +5,7 @@ export const navLinks = [
     href: "/#centers",
     subLinks: [
       { label: "Calicut", href: "/center/calicut" },
+      /*
       { label: "Kannur", href: "/center/kannur" },
       { label: "Thrissur", href: "/center/thrissur" },
       { label: "Manjeri", href: "/center/manjeri" },
@@ -12,7 +13,8 @@ export const navLinks = [
       { label: "Perinthalmanna", href: "/center/perinthalmanna" },
       { label: "Edappal", href: "/center/edappal" },
       { label: "Kottakkal", href: "/center/kottakkal" },
-      { label: "Ernakulam", href: "/center/ernakulam" },
+      */
+      { label: "Kochi", href: "/center/ernakulam" },
     ]
   },
     { label: "About Us", href: "/about" },

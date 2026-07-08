@@ -42,6 +42,7 @@ export const centers = [
     batchInfo: { nextBatch: "18 June 2026", mode: "Online / Offline", timing: "9AM – 8PM" },
     announcement: "Hurry Up: Next Batch Begins in 2 Weeks",
   },
+/*
   {
     id: 2,
     slug: "kannur",
@@ -273,11 +274,12 @@ export const centers = [
     batchInfo: { nextBatch: "10 July 2026", mode: "Offline", timing: "9AM – 6PM" },
     announcement: "Grand Opening Special – First 50 Students Get Exclusive Discount!",
   },
+*/
   {
     id: 9,
     slug: "ernakulam",
-    name: "Ernakulam",
-    fullName: "Ernakulam Center",
+    name: "Kochi",
+    fullName: "Kochi Center",
     badge: "Smart City Hub",
     image:kochi,
     icon: "🏙️",
@@ -286,7 +288,7 @@ export const centers = [
     email: "hello@catalysthub.in",
     mapUrl: "https://maps.google.com/?q=Ernakulam+Kerala",
     desc: "Kochi's premier tech training center in the heart of South Kerala's IT hub.",
-    heroTagline: "Best Tech Career Courses in Ernakulam",
+    heroTagline: "Best Tech Career Courses in Kochi",
     heroDesc: "In Kerala's commercial capital, we bring you the best in tech education. Catalyst Ernakulam is your launchpad to a successful career in technology.",
     stats: [
       { num: "8000+", label: "Students Building Successful Careers" },

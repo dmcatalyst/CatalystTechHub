@@ -160,7 +160,7 @@ const SuccessStoriesPage = () => {
 
                 <section className={styles.careerSection} aria-labelledby="alumni-title">
 
-                    <h2 id="alumni-title" className={styles.heroTitle}>
+                    <h2 id="alumni-title" className={styles.sectionTitle}>
                         Explore our Alumni's 
                         <span className={styles.gradientText}>
                             Experience
@@ -265,9 +265,9 @@ const SuccessStoriesPage = () => {
                                                     "{item.text}"
                                                 </p>
                                                 <div className={styles.authorInfo}>
-                                                    <h4 className={styles.name}>
+                                                    <h3 className={styles.name}>
                                                         {item.name}
-                                                    </h4>
+                                                    </h3>
                                                     <p className={styles.role}>
                                                         {item.role}
                                                     </p>
@@ -304,8 +304,8 @@ const SuccessStoriesPage = () => {
                             { className: styles.row2, data: alumni.filter((_, i) => i % 2 === 1) }
                         ].map((row, rIdx) => (
                             <div key={rIdx} className={`${styles.placementRow} ${row.className}`}>
-                                {row.data.map((person) => (
-                                    <article key={person.id} className={styles.placementCard}>
+                                {[...row.data, ...row.data].map((person, index) => (
+                                    <article key={`${person.id}-${index}`} className={styles.placementCard}>
                                         <div className={styles.placementImageWrap}>
                                             <img src={person.img} alt={person.name} className={styles.placementImg} loading="lazy" />
                                         </div>

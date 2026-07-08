@@ -52,7 +52,7 @@ function AboutPage() {
                to succeed in today's competitive technology landscape. 
           </p>
 
-          <button>Learn More</button>
+          <button onClick={() => window.dispatchEvent(new CustomEvent('openModal', { detail: { type: 'callback' } }))}>Get in touch</button>
         </div>
 
         <div className={styles.heroImage}>
@@ -102,7 +102,6 @@ function AboutPage() {
       <section className={`section ${styles.featuresSection}`} aria-labelledby="features-title">
         <h2 id="features-title" className={styles.heading}>
           Shaping the <span>Next Generation of Tech</span> Professionals
-          Transforming Students into
         </h2>
 
         <div className={styles.featuresGrid}>

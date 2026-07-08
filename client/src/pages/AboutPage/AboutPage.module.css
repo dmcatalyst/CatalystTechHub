@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+  padding-bottom: 40px;
 }
 
 .heroContent {
@@ -116,6 +117,7 @@
 
 .missionSection {
   text-align: center;
+  padding-top: 60px;
 }
 
 .missionSection h2 {
@@ -220,7 +222,7 @@
 
 .locationsGrid {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.8rem;
 }
 
@@ -385,7 +387,7 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 0;
     background: transparent;
-    padding: var(--section-padding-mobile);
+    padding: 10px 0;
     gap: 12px;
   }
 
@@ -396,7 +398,9 @@
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
   }
 
-  .missionSection,
+  .missionSection {
+    padding-top: 30px;
+  }
   .featuresSection {
   }
 

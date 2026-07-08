@@ -8,6 +8,9 @@ import { Turnstile } from '@marsidev/react-turnstile';
 import Skills from '../../sections/Skills/Skills';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import { getUTMs } from "../../utils/getUTMs";
+import mentor1 from '../../assets/mentors/benaseer.jpeg';
+import mentor2 from '../../assets/mentors/shakir.jpeg';
+import mentor3 from '../../assets/mentors/sruthi.jpeg';
 
 export default function CenterDetailPage({ navigate }) {
   const [center, setCenter] = useState(null);
@@ -147,6 +150,23 @@ export default function CenterDetailPage({ navigate }) {
               <p className={styles.heroDesc}>
                 {center.heroDesc || `Join our flagship campus in ${center.name} with state-of-the-art labs, expert faculties, and placement cells to boost your tech career.`}
               </p>
+
+              <div className={styles.avatarBadge}>
+                <div className={styles.avatars}>
+                  <img src={mentor1} alt="mentor" />
+                  <img src={mentor2} alt="mentor" />
+                  <img src={mentor3} alt="mentor" />
+                </div>
+                <span className={styles.avatarText}>
+                  <span className={styles.ratingStars}>
+                    <span className={styles.starsColor}>★★★★★</span> 4.8 (4.8k)
+                  </span>
+                  <br />
+                  <span className={styles.fakeLink}>
+                    Join our alumni
+                  </span>
+                </span>
+              </div>
               
               <div className={styles.heroQuickStats}>
                 <div className={styles.quickStatItem}>

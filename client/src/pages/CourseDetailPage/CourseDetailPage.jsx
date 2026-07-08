@@ -361,7 +361,15 @@ const CourseDetailPage = ({ navigate }) => {
                     <img src={mentor2} alt="mentor" />
                     <img src={mentor3} alt="mentor" />
                   </div>
-                  <span className={styles.avatarText}>Learn in-demand tech<br />skills through hands</span>
+                  <span className={styles.avatarText}>
+                    <span className={styles.ratingStars}>
+                      <span className={styles.starsColor}>★★★★★</span> {course.rating || "4.8"} ({course.reviews || "4.8k"})
+                    </span>
+                    <br />
+                    <span className={styles.fakeLink}>
+                      Join our alumni
+                    </span>
+                  </span>
                 </div>
 
                 <button 
