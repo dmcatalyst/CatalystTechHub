@@ -42,7 +42,7 @@ export default function CourseCard({ course, navigate }) {
       </div>
 
       <div className={styles.cardBody}>
-        <h3 className={styles.courseTitle}>{course.title} + AI Integration</h3>
+        <h3 className={styles.courseTitle}>{course.title}</h3>
         <p className={styles.revrating}><span className={styles.rating}>{course.rating}</span> rating</p>
 
          {/* Duration */}
