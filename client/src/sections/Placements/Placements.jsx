@@ -94,7 +94,7 @@ const Placements = () => {
                       ref={groupIndex === 0 && index === 0 ? firstCardRef : null} 
                       className={styles.card}
                     >
-                      <img src={image} alt={`Placement Row 1 ${index + 1}`} className={styles.image} loading="lazy" />
+                      <img src={image} alt={`Placement Row 1 ${index + 1}`} className={styles.image} />
                     </figure>
                   ))}
                 </div>
@@ -105,13 +105,13 @@ const Placements = () => {
           <div className={`${styles.marqueeRow} ${styles.staggeredRow}`}>
             <div 
               className={styles.marqueeTrack}
-              style={{ ...(offset ? { marginLeft: `-${offset}px` } : {}), '--duration': '12s' }}
+              style={{ ...(offset ? { transform: `translateX(-${offset}px)` } : {}), '--duration': '12s' }}
             >
               {Array.from({ length: 4 }).map((_, groupIndex) => (
                 <div key={`r2-group-${groupIndex}`} className={styles.marqueeGroup} aria-hidden={groupIndex > 0 ? "true" : undefined}>
                   {placementImages.slice(5).map((image, index) => (
                     <figure key={`r2-${groupIndex}-${index}`} className={styles.card}>
-                      <img src={image} alt={`Placement Row 2 ${index + 1}`} className={styles.image} loading="lazy" />
+                      <img src={image} alt={`Placement Row 2 ${index + 1}`} className={styles.image} />
                     </figure>
                   ))}
                 </div>
