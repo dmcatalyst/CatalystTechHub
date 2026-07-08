@@ -31,6 +31,8 @@ export default function Breadcrumb({ currentPage, navigate }) {
   } else if (currentPage === 'blog-detail') {
     pathItems.push({ label: 'Blogs', path: '/blogs' });
     pathItems.push({ label: 'Blog Post', path: '#', isCurrent: true });
+  } else if (currentPage === 'contact') {
+    pathItems.push({ label: 'Contact Us', path: '/contact', isCurrent: true, color: 'black' });
   } else if (currentPage === 'course-detail') {
     pathItems.push({ label: 'Courses', path: '/courses' });
     
@@ -62,7 +64,7 @@ export default function Breadcrumb({ currentPage, navigate }) {
             {pathItems.map((item, index) => (
               <li key={index} className={styles.breadcrumbItem}>
                 {item.isCurrent ? (
-                  <span className={styles.current} aria-current="page">
+                  <span className={styles.current} aria-current="page" style={item.color ? { color: item.color } : {}}>
                     {item.label}
                   </span>
                 ) : (

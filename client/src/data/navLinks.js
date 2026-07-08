@@ -25,6 +25,5 @@ export const navLinks = [
       { label: "Blogs", href: "/blogs" },
     ]  
   },
-
 ];
 

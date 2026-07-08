@@ -387,9 +387,9 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
               {/* CTA — desktop only */}
               <button 
                 className={styles.cta}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => navigate('/contact')}
               >
-                Talk With Expert
+                Contact us
               </button>
 
               {/* Mobile Search Toggle Icon */}
@@ -540,17 +540,20 @@ export default function Navbar({ searchQuery, setSearchQuery, navigate, currentP
                     )}
                   </li>
                 ))}
+                <li className={styles.mobileLinkContainer}>
+                  <a
+                    href="/contact"
+                    onClick={(e) => {
+                      closeMenu();
+                      e.preventDefault();
+                      navigate('/contact');
+                    }}
+                    className={styles.mobileLink}
+                  >
+                    Contact us
+                  </a>
+                </li>
               </ul>
-              {/* CTA */}
-              <button 
-                onClick={() => {
-                  closeMenu();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }} 
-                className={styles.mobileCta}
-              >
-                Talk With Expert
-              </button>
             </nav>
           )}
         </div>

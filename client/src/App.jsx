@@ -37,6 +37,7 @@ import ContactModal from './components/ContactModal/ContactModal';
 import StudentTestimonialsBanner from './components/StudentTestimonialsBanner/StudentTestimonialsBanner';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
+import ContactPage from './pages/ContactPage/ContactPage';
 
 export default function App() {
   // Attach scroll-reveal observer after mount
@@ -54,6 +55,7 @@ export default function App() {
     if (path.includes('/blogs/'))return 'blog-detail';
     if (path.includes('/blogs')) return 'blogs';
     if (path.includes('/thank-you')) return 'thank-you';
+    if (path.includes('/contact')) return 'contact';
     return '404';
   });
   
@@ -97,6 +99,7 @@ export default function App() {
       else if (path.includes('/blogs/')) setCurrentPage('blog-detail');
       else if (path.includes('/blogs')) setCurrentPage('blogs'); 
       else if (path.includes('/thank-you')) setCurrentPage('thank-you');
+      else if (path.includes('/contact')) setCurrentPage('contact');
       else setCurrentPage('404');
       window.scrollTo(0, 0);
     };
@@ -119,6 +122,7 @@ export default function App() {
     else if (path.includes('/blogs/')) setCurrentPage('blog-detail');
     else if (path.includes('/blogs')) setCurrentPage('blogs');
     else if (path.includes('/thank-you')) setCurrentPage('thank-you');
+    else if (path.includes('/contact')) setCurrentPage('contact');
     else setCurrentPage('404');
     window.scrollTo(0, 0);
   };
@@ -153,6 +157,8 @@ export default function App() {
           <BlogDetails key={currentPath} navigate={navigate} />
         ) : currentPage === 'blogs' ? (
           <BlogPage />
+        ) : currentPage === 'contact' ? (
+          <ContactPage navigate={navigate} />
         ): (
           <>
             <Hero navigate={navigate} />
@@ -171,7 +177,7 @@ export default function App() {
           </>
         )}
         {!isMinimalLayout && <FAQ />}
-        {!isMinimalLayout && <Contact navigate={navigate} />}
+        {!isMinimalLayout && currentPage !== 'contact' && <Contact navigate={navigate} />}
       </main>
 
       {!isMinimalLayout && <Footer navigate={navigate} />}
