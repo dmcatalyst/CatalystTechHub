@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Breadcrumb.module.css';
-import { courses } from '../../data/siteData';
+import { courses, blogs } from '../../data/siteData';
 import homeIconImg from '../../assets/homeicon.png';
 import whiteIconImg from '../../assets/white.png';
 
@@ -30,7 +30,13 @@ export default function Breadcrumb({ currentPage, navigate }) {
     pathItems.push({ label: 'Centers', path: '#', isCurrent: true });
   } else if (currentPage === 'blog-detail') {
     pathItems.push({ label: 'Blogs', path: '/blogs' });
-    pathItems.push({ label: 'Blog Post', path: '#', isCurrent: true });
+    const id = window.location.pathname.split('/blogs/')[1];
+    const blog = blogs.find(b => b.id.toString() === id);
+    if (blog) {
+      pathItems.push({ label: blog.title, path: `/blogs/${id}`, isCurrent: true });
+    } else {
+      pathItems.push({ label: 'Blog Post', path: '#', isCurrent: true });
+    }
   } else if (currentPage === 'contact') {
     pathItems.push({ label: 'Contact Us', path: '/contact', isCurrent: true, color: 'black' });
   } else if (currentPage === 'course-detail') {
@@ -58,7 +64,7 @@ export default function Breadcrumb({ currentPage, navigate }) {
 
   return (
     <div className={`${styles.breadcrumbWrapper} ${isDarkBackground ? styles.darkBg : styles.lightBg} ${!hasTopBar ? styles.noTopBar : ''}`}>
-      <div className="container">
+      <div className={`container ${currentPage === 'blog-detail' ? styles.blogDetailPadding : ''}`}>
         <nav aria-label="breadcrumb">
           <ul className={styles.breadcrumb}>
             {pathItems.map((item, index) => (

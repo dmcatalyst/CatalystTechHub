@@ -1,17 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './BlogDetails.module.css';
 import { blogs } from '../../data/blogs';
 import { Turnstile } from '@marsidev/react-turnstile';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 const BlogDetails = ({ navigate }) => {
+  const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState(null);
 
+  const [activeSection, setActiveSection] = useState(0);
+
   const path = window.location.pathname;
   const id = path.split('/blogs/')[1];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.id.replace('section-', ''), 10);
+            setActiveSection(index);
+          }
+        });
+      },
+      { rootMargin: '-100px 0px -60% 0px' }
+    );
+
+    const sections = document.querySelectorAll('section[id^="section-"]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [id]);
 
   const blog = blogs.find(
     item => item.id.toString() === id
@@ -23,6 +47,10 @@ const BlogDetails = ({ navigate }) => {
 
   const handleEnroll = async (e) => {
     e.preventDefault();
+    if (!name.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
     if (!phone.trim()) {
       alert("Please enter your phone number to enroll.");
       return;
@@ -43,7 +71,7 @@ const BlogDetails = ({ navigate }) => {
     setIsSubmitting(true);
 
     const payload = {
-      name: "Blog Reader Lead",
+      name: name.trim() + " (Blog Lead)",
       phone: cleanPhone,
       email: "N/A",
       course: blog.title,
@@ -89,19 +117,85 @@ const BlogDetails = ({ navigate }) => {
 
       <div className={`container ${styles.contentWrapper}`}>
 
-        <h1 className={styles.title}>
-          {content.heroTitle} :
-        </h1>
+        <header className={styles.blogHeader}>
+          <h1 className={styles.title}>
+            {content.heroTitle}
+          </h1>
+
+          <div className={styles.metaSection}>
+            <div className={styles.authorText}>by {blog.author || "Benaseer"}</div>
+          </div>
+        </header>
 
         {/* LEFT CONTENT */}
 
         <div className={styles.left}>
+
+          <div className={styles.metaBottom}>
+            <div className={styles.metaLeft}>
+              <span>Updated on {blog.date || "May 20, 2026"}</span>
+              <span className={styles.pipe}>|</span>
+              <span>{blog.read || "4 min read"}</span>
+            </div>
+            <div className={styles.metaRight}>
+              <span className={styles.shareText}>Share:</span>
+              <button 
+                className={styles.shareBtn} 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: blog.title || content.heroTitle,
+                      url: window.location.href
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert("Link copied to clipboard!");
+                  }
+                }}
+                title="Copy Link"
+                aria-label="Copy link to this blog"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
 
           <img
             src={content.heroImage}
             alt={content.heroTitle}
             className={styles.heroImage}
           />
+
+          <div className={`${styles.card} ${styles.mobileToc}`}>
+            <h3 className={styles.cardTitle}>
+              Table of Content
+            </h3>
+            <nav aria-label="Table of Contents">
+              <ol>
+              {content.tableOfContents.map((item,index)=>(
+                <li key={index}>
+                  <a 
+                    href={`#section-${index}`} 
+                    className={`${styles.tocLink} ${activeSection === index ? styles.tocLinkActive : ''}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById(`section-${index}`);
+                      if (element) {
+                        const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+              </ol>
+            </nav>
+          </div>
 
           {content.sections.map((section,index)=>(
 
@@ -130,7 +224,7 @@ const BlogDetails = ({ navigate }) => {
 
         <aside className={styles.sidebar} aria-label="Blog sidebar">
 
-          <div className={styles.card}>
+          <div className={`${styles.card} ${styles.desktopToc}`}>
 
             <h3 className={styles.cardTitle}>
               Table of Content
@@ -142,7 +236,18 @@ const BlogDetails = ({ navigate }) => {
               {content.tableOfContents.map((item,index)=>(
 
                 <li key={index}>
-                  <a href={`#section-${index}`} className={styles.tocLink}>
+                  <a 
+                    href={`#section-${index}`} 
+                    className={`${styles.tocLink} ${activeSection === index ? styles.tocLinkActive : ''}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById(`section-${index}`);
+                      if (element) {
+                        const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     {item}
                   </a>
                 </li>
@@ -176,6 +281,16 @@ const BlogDetails = ({ navigate }) => {
                 </p>
 
                 <form onSubmit={handleEnroll}>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className={styles.input}
+                    aria-label="Full Name"
+                    autoComplete="name"
+                    required
+                  />
                   <input
                     type="tel"
                     placeholder="Phone Number"

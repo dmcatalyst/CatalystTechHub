@@ -14,8 +14,9 @@
 }
 
 .heroTitle {
-  font-size: clamp(1.5rem, 4vw, 2.8rem);
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: #000000;

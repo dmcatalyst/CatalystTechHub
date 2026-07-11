@@ -305,7 +305,7 @@ const SuccessStoriesPage = () => {
                         ].map((row, rIdx) => (
                             <div key={rIdx} className={`${styles.placementRow} ${row.className}`}>
                                 {[...row.data, ...row.data].map((person, index) => (
-                                    <article key={`${person.id}-${index}`} className={styles.placementCard}>
+                                    <article key={`${person.id}-${index}`} className={`${styles.placementCard} ${index >= row.data.length ? styles.duplicateCard : ''}`}>
                                         <div className={styles.placementImageWrap}>
                                             <img src={person.img} alt={person.name} className={styles.placementImg} loading="lazy" />
                                         </div>

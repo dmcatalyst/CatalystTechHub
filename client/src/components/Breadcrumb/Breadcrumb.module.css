@@ -107,3 +107,37 @@
   pointer-events: none;
 }
 
+/* Blog detail breadcrumb alignment */
+.blogDetailPadding {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+@media(max-width: 1024px) {
+  .blogDetailPadding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .breadcrumb {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .breadcrumbItem, .separator {
+    flex-shrink: 0;
+  }
+
+  .breadcrumbItem:last-child {
+    flex-shrink: 1;
+  }
+
+  .current {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+    display: inline-block;
+  }
+}
