@@ -1,7 +1,7 @@
-import list1 from '../assets/courselisting/list1.jpeg'
-import list2 from '../assets/courselisting/list2.jpeg'
-import list3 from '../assets/courselisting/list3.jpeg'
-import list4 from '../assets/courselisting/list4.jpeg'
+import list1 from '../assets/CourseListing/list1.jpeg'
+import list2 from '../assets/CourseListing/list2.jpeg'
+import list3 from '../assets/CourseListing/list3.jpeg'
+import list4 from '../assets/CourseListing/list4.jpeg'
 
 export const courses = [
 
