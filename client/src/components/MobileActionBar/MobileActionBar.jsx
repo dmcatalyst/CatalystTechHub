@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './MobileActionBar.module.css';
 
+import { courses } from '../../data/siteData';
+
 /**
  * MobileActionBar - A sticky action bar that appears on mobile after scrolling.
  * Provides quick access to "View Courses" and "Contact".
@@ -8,6 +10,12 @@ import styles from './MobileActionBar.module.css';
 export default function MobileActionBar({ navigate, currentPage }) {
   const [isVisible, setIsVisible] = useState(false);
   const isCourseDetail = currentPage === 'course-detail';
+  
+  let currentCourse = null;
+  if (isCourseDetail) {
+    const slug = window.location.pathname.split('/course/')[1];
+    currentCourse = courses.find(c => c.slug === slug);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +54,18 @@ export default function MobileActionBar({ navigate, currentPage }) {
         
         <button 
           className={styles.btnPrimary}
-          onClick={() => window.dispatchEvent(new CustomEvent('openModal', { detail: { type: 'callback' } }))}
+          onClick={() => {
+            if (isCourseDetail && currentCourse?.syllabusLink) {
+              const link = document.createElement('a');
+              link.href = currentCourse.syllabusLink;
+              link.download = `${currentCourse.title.replace(/\s+/g, '-')}-Syllabus.pdf`;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            } else {
+              window.dispatchEvent(new CustomEvent('openModal', { detail: { type: 'callback' } }));
+            }
+          }}
         >
           {isCourseDetail ? 'Download Syllabus' : 'Book Free Demo Class'}
         </button>

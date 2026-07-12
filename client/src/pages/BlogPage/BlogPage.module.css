@@ -201,6 +201,7 @@
     flex:0 0 auto;
     white-space:nowrap;
     min-width:max-content;
+    width: auto;
   }
 
   .blogGrid{

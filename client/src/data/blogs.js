@@ -14,7 +14,7 @@ import benaseer from "../assets/mentors/benaseer.jpeg";
 export const blogs = [
 {
   id: 1,
-  courseSlug: "full-stack-web-development",
+  courseSlug: "python-full-stack-development-with-devops",
   author: "Shakir",
 
   // Card Data
@@ -100,7 +100,7 @@ Artificial Intelligence and Python form a powerful combination in modern technol
 
 {
   id: 4,
-  courseSlug: "mern-stack",
+  courseSlug: "mern-stack-development",
   author: "Neeraj",
 
   // Card Data (used in blog listing)
@@ -205,7 +205,7 @@ SEO needs, scalability, and development style.
 
 {
   id: 8,
-  courseSlug: "data-science-ai",
+  courseSlug: "data-analytics-with-generative-ai",
   author: "Benaseer",
 
   // Card Data (used in blog listing)
@@ -325,7 +325,7 @@ career in one of the fastest-growing fields in the world.
 
 {
   id: 9,
-  courseSlug: "devops",
+  courseSlug: "python-full-stack-development-with-devops",
   author: "Neeraj",
 
   // Card Data (used in blog listing)
@@ -439,7 +439,7 @@ while creating exciting career opportunities for professionals.
 ,
 {
   id: 10,
-  courseSlug: "data-analyst",
+  courseSlug: "data-analytics-with-generative-ai",
   author: "Sruthi",
 
   // Card Data (used in blog listing)

@@ -16,6 +16,7 @@ export const courses = [
   rating: "4.8",
   reviews: "4.2k",
   img: list4,
+  syllabusLink: "/pdfs/Python-full-stack.pdf",
 
   whatYouWillLearn: [
     {
@@ -236,6 +237,7 @@ export const courses = [
   rating: "4.9",
   reviews: "5.1k",
   img: list2,
+  syllabusLink: "/pdfs/Data-Analytics-brochure.pdf",
 
   whatYouWillLearn: [
     {
@@ -640,6 +642,7 @@ export const courses = [
   rating: "4.9",
   reviews: "4.5k",
   img: list1,
+  syllabusLink: "/pdfs/New-Mern-stack.pdf",
 
   whatYouWillLearn: [
     {

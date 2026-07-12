@@ -380,7 +380,18 @@ const CourseDetailPage = ({ navigate }) => {
                 </button>
                 <button 
                   className={styles.mobileHeroBtnOutline}
-                  onClick={() => handleOpenModal('syllabus')}
+                  onClick={() => {
+                    if (course?.syllabusLink) {
+                      const link = document.createElement('a');
+                      link.href = course.syllabusLink;
+                      link.download = `${course.title.replace(/\s+/g, '-')}-Syllabus.pdf`;
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    } else {
+                      handleOpenModal('callback');
+                    }
+                  }}
                 >
                   Download Syllabus
                 </button>

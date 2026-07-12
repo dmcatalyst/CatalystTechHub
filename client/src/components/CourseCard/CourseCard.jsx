@@ -97,7 +97,12 @@ export default function CourseCard({ course, navigate }) {
               e.preventDefault();
               e.stopPropagation();
               if (course.syllabusLink) {
-                window.open(course.syllabusLink, '_blank');
+                const link = document.createElement('a');
+                link.href = course.syllabusLink;
+                link.download = `${course.title.replace(/\s+/g, '-')}-Syllabus.pdf`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
               }
             }}
           >
