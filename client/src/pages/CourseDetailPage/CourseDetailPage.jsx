@@ -211,6 +211,9 @@ const CourseDetailPage = ({ navigate }) => {
 
       setHeroSuccess(true);
       setTurnstileToken(null);
+      setTimeout(() => {
+        navigate('/thank-you');
+      }, 1000);
     } catch (error) {
       console.error(error);
       const mailtoLink = `mailto:hello@catalysthub.in?subject=Course Lead&body=${encodeURIComponent(

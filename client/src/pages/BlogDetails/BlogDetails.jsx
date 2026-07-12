@@ -97,6 +97,9 @@ const BlogDetails = ({ navigate }) => {
       setIsSuccess(true);
       setPhone('');
       setTurnstileToken(null);
+      setTimeout(() => {
+        navigate('/thank-you');
+      }, 1000);
     } catch (error) {
       console.error(error);
       const mailtoLink = `mailto:hello@catalysthub.in?subject=Blog Lead&body=${encodeURIComponent(
