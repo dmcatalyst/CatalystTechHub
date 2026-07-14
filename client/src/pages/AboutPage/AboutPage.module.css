@@ -66,6 +66,15 @@
   justify-content: center;
 }
 
+.mobileImage {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.desktopImage {
+  display: flex;
+}
+
 .heroImg {
   width: 100%;
   max-width: 450px;
@@ -331,6 +340,14 @@
     text-align: left;
   }
 
+  .mobileImage {
+    display: flex;
+  }
+
+  .desktopImage {
+    display: none;
+  }
+
   .statsSection {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -375,7 +392,8 @@
   }
 
   .heroContent h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .imagePlaceholder {

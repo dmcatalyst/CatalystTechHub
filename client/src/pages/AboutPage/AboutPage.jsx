@@ -52,10 +52,14 @@ function AboutPage() {
                to succeed in today's competitive technology landscape. 
           </p>
 
+          <div className={`${styles.heroImage} ${styles.mobileImage}`}>
+            <img src={snapcat} alt="About Catalyst" className={styles.heroImg} />
+          </div>
+
           <button onClick={() => window.dispatchEvent(new CustomEvent('openModal', { detail: { type: 'callback' } }))}>Get in touch</button>
         </div>
 
-        <div className={styles.heroImage}>
+        <div className={`${styles.heroImage} ${styles.desktopImage}`}>
           <img src={snapcat} alt="About Catalyst" className={styles.heroImg} />
         </div>
       </section>
