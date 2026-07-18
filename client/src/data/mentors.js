@@ -1,6 +1,10 @@
-import sruthi from '../assets/mentors/sruthi.jpeg'
-import shakir from '../assets/mentors/shakir.jpeg'
-import benaseer from '../assets/mentors/benaseer.jpeg'
+import sruthi from '../assets/mentors/sruthi.webp'
+import shakir from '../assets/mentors/shakir.webp'
+import benaseer from '../assets/mentors/benaseer.webp'
+import sahla from '../assets/mentors/sahla.webp'
+import dilna from '../assets/mentors/Dilna.webp'
+import shafeela from '../assets/mentors/Shafeela.webp'
+
 export const mentors = [
   {
     id: 1,
@@ -27,7 +31,21 @@ export const mentors = [
     name: "Sahla Nargees P",
     title: "English Communication & Soft Skills Trainer",
     description: "With over 2 years of experience in English language and soft skills training, Sahla has mentored 150+ learners ranging from school students to graduate job seekers and working professionals. ",
-    image: ""
-  },
+    image: sahla
+  },{
+  id: 5,
+  name: "Dilna",
+  title: "Data Analytics Faculty",
+  description: "Specializes in Data Analytics, Python, SQL, Power BI, and Generative AI, with a strong focus on practical learning, real-world projects, and data-driven problem-solving.",
+  image: dilna
+},
+{
+  id: 6,
+  name: "Shafeela",
+  title: "Python Full Stack Development Trainer",
+  description: "An experienced Python Full Stack Development trainer with expertise in Python, Django, React, cloud deployment, and DevOps. Dedicated to training learners through hands-on projects and industry-focused development practices.",
+  image: shafeela
+}
+
 ];
 

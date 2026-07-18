@@ -8,9 +8,9 @@ import successVideo from '../../assets/videos/success.mp4';
 import parthivVideo from '../../assets/videos/parthiv.mp4';
 import adithVideo from '../../assets/videos/adith.mp4';
 import StudentTestimonialsBanner from '../../components/StudentTestimonialsBanner/StudentTestimonialsBanner';
-import mentor1 from '../../assets/mentors/benaseer.jpeg';
-import mentor2 from '../../assets/mentors/shakir.jpeg';
-import mentor3 from '../../assets/mentors/sruthi.jpeg';
+import mentor1 from '../../assets/mentors/benaseer.webp';
+import mentor2 from '../../assets/mentors/shakir.webp';
+import mentor3 from '../../assets/mentors/sruthi.webp';
 import { Turnstile } from '@marsidev/react-turnstile';
 import Skills from '../../sections/Skills/Skills';
 
@@ -559,11 +559,8 @@ const CourseDetailPage = ({ navigate }) => {
               <h3 className={styles.overviewHeading}>{course.title} Course Overview</h3>
               <BoldFirstTwoLinesText 
                 className={styles.overviewParagraph}
-                text="The mentors were incredibly supportive and always ready to help. I especially loved the hands-on projects they made learning much more effective. Joining this course was one of the best decisions I've made. The training was practical, easy to understand.The mentors were incredibly"
+                text={course.overviewBodyText || course.desc}
               />
-              <p className={styles.overviewParagraph}>
-                The mentors were incredibly supportive and always ready to help. I especially loved the hands-on projects they made learning much more effective.
-              </p>
 
               <h3 className={styles.overviewHeadingSmall}>What You'll Learn</h3>
               <div className={styles.learnListGrid}>

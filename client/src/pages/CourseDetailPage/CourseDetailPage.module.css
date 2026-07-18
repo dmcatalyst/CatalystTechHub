@@ -1364,6 +1364,7 @@
   color: #334155;
   line-height: 1.7;
   margin-bottom: 24px;
+  white-space: pre-line;
 }
 
 .overviewHeadingSmall {

@@ -9,7 +9,7 @@ import ai from "../assets/ai.png";
 import mern from "../assets/mern.png";
 import analyst from "../assets/analyst.png";
 import devops from "../assets/devops.png";
-import benaseer from "../assets/mentors/benaseer.jpeg";
+import benaseer from "../assets/mentors/benaseer.webp";
 
 export const blogs = [
 {

@@ -8,9 +8,9 @@ import { Turnstile } from '@marsidev/react-turnstile';
 import Skills from '../../sections/Skills/Skills';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import { getUTMs } from "../../utils/getUTMs";
-import mentor1 from '../../assets/mentors/benaseer.jpeg';
-import mentor2 from '../../assets/mentors/shakir.jpeg';
-import mentor3 from '../../assets/mentors/sruthi.jpeg';
+import mentor1 from '../../assets/mentors/benaseer.webp';
+import mentor2 from '../../assets/mentors/shakir.webp';
+import mentor3 from '../../assets/mentors/sruthi.webp';
 
 export default function CenterDetailPage({ navigate }) {
   const [center, setCenter] = useState(null);
