@@ -2,15 +2,15 @@ import React from 'react';
 import styles from './Life.module.css';
 
 // Import images from assets/life
-import img1 from '../../assets/life/cat4.png';
-import img2 from '../../assets/life/dathub.png';
-import img3 from '../../assets/life/crowd.jpeg';
-import img4 from '../../assets/life/learning.png';
-import img5 from '../../assets/life/trainee.png';
-import img6 from '../../assets/life/catalyst.png';
-import img7 from '../../assets/life/lady.jpeg';
-import img8 from '../../assets/life/neeraj.jpeg';
-import img9 from '../../assets/life/success.jpeg';
+import img1 from '../../assets/life/life5.jpeg';
+import img2 from '../../assets/life/life2.jpeg';
+import img3 from '../../assets/life/life3.jpeg';
+import img4 from '../../assets/life/lady.jpeg';
+import img5 from '../../assets/life/life1.jpeg';
+import img6 from '../../assets/life/life7.jpeg';
+import img7 from '../../assets/life/neeraj.jpeg';
+import img8 from '../../assets/life/life6.jpeg';
+import img9 from '../../assets/life/life4.jpeg';
 
 const Life = ({ navigate }) => {
   const [selectedImg, setSelectedImg] = React.useState(null);

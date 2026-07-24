@@ -1,5 +1,5 @@
 import crowdImg from "../assets/life/crowd.jpeg";
-import learningImg from "../assets/life/learning.png";
+import learningImg from "../assets/life/life2.jpeg";
 import christmasImg from "../assets/life/christmas.jpg";
 import traineeImg from "../assets/life/trainee.png";
 import successImg from "../assets/life/success.jpeg";
