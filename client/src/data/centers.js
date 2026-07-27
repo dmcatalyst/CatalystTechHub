@@ -22,8 +22,8 @@ export const centers = [
     email: "hello@catalysthub.in",
     mapUrl: "https://share.google/M9OaZmuLtx9pZYsX9",
     desc: "Our flagship campus with state-of-the-art labs, a dedicated career center, and a powerful placement cell.",
-    heroTagline: "Best Tech Career Courses in Calicut",
-    heroDesc: "The mentors were incredibly supportive and always ready to help. I especially loved the hands-on projects they made learning much more effective. Joining this course was one of the best decisions I've made.",
+    heroTagline: "Catalyst Tech hub Calicut | Best IT Training institute in Calicut ",
+    heroDesc: "Learn with Kerala’s Best IT Training institute for tech courses that combine expert guidance, hands on learning, and real world Projects. At catalyst Tech hub Calicut, develop in demand tech skills in Python full-stack development with python, Data analytics with gen ai and cyber security.",
     stats: [
       { num: "2000+", label: "Students Building Successful Careers" },
       { num: "100%", label: "Focus on Practical Learning & Career Growth" },
@@ -288,8 +288,8 @@ export const centers = [
     email: "hello@catalysthub.in",
     mapUrl: "https://maps.google.com/?q=Ernakulam+Kerala",
     desc: "Kochi's premier tech training center in the heart of South Kerala's IT hub.",
-    heroTagline: "Best Tech Career Courses in Kochi",
-    heroDesc: "In Kerala's commercial capital, we bring you the best in tech education. Catalyst Ernakulam is your launchpad to a successful career in technology.",
+    heroTagline: "Catalyst Tech Hub Kochi | Best IT Training institute in Kochi",
+    heroDesc: "In Kerala's commercial capital, we bring you the best in tech education. Catalyst Kochi campus, The best IT Training institute offers career focused software and tech courses including , Python full stack development with devops, Data science with gen ai, cyber security ect…",
     stats: [
       { num: "8000+", label: "Students Building Successful Careers" },
       { num: "100%", label: "Focus on Practical Learning & Career Growth" },

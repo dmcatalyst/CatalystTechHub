@@ -12,7 +12,7 @@ export const courses = [
   location: "Calicut",
   desc: "Become a job-ready Full Stack Python Developer by mastering frontend development, backend development, databases, REST APIs, cloud deployment, and DevOps practices. Build real-world projects using HTML, CSS, JavaScript, React, Python, Django, PostgreSQL, Docker, Git, CI/CD, AWS, and modern deployment workflows.",
   overviewBodyText: "Build modern Web applications from scratch and learn how to deploy, automate and manage them using industry standard DevOps tools. Python full stack development course with devops course is designed to help learners to gain practical knowledge in front end development, backend programming, database, APIs, Cloud deployment, version control, and CI/CD Practices \n\nBuild real-world projects using HTML, CSS, JavaScript, React, Python, Django, PostgreSQL, Docker, Git, CI/CD, AWS, and modern deployment workflows.",
-  duration: "8 months",
+  duration: "6 months",
   fee: "₹99,999",
   rating: "4.8",
   reviews: "4.2k",

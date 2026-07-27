@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Breadcrumb.module.css';
-import { courses, blogs } from '../../data/siteData';
+import { courses, blogs, centers } from '../../data/siteData';
 import homeIconImg from '../../assets/homeicon.png';
 import whiteIconImg from '../../assets/white.png';
 
@@ -27,7 +27,14 @@ export default function Breadcrumb({ currentPage, navigate }) {
   } else if (currentPage === 'blogs') {
     pathItems.push({ label: 'Blogs', path: '/blogs', isCurrent: true });
   } else if (currentPage === 'center-detail') {
-    pathItems.push({ label: 'Centers', path: '#', isCurrent: true });
+    const slug = window.location.pathname.split('/').pop();
+    const center = centers.find(c => c.slug.toLowerCase() === slug.toLowerCase());
+    if (center) {
+      pathItems.push({ label: 'Centers', path: '#' });
+      pathItems.push({ label: center.name, path: `/center/${slug}`, isCurrent: true });
+    } else {
+      pathItems.push({ label: 'Centers', path: '#', isCurrent: true });
+    }
   } else if (currentPage === 'blog-detail') {
     pathItems.push({ label: 'Blogs', path: '/blogs' });
     const id = window.location.pathname.split('/blogs/')[1];
