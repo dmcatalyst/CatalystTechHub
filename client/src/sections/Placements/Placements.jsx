@@ -10,6 +10,10 @@ import nida from '../../assets/placements/nidha.jpeg';
 import nishad from '../../assets/placements/nishad.jpeg';
 import sam from '../../assets/placements/sam.jpeg';
 import shabeeha from '../../assets/placements/shabeeha.jpeg';
+import dilfa from '../../assets/placements/dilfa.webp';
+import jaseer from '../../assets/placements/jaseer.webp';
+import naajiya from '../../assets/placements/naajiya.webp';
+import rinshad from '../../assets/placements/rinshad.webp';
 
 const placementImages = [
   abinav,
@@ -21,6 +25,10 @@ const placementImages = [
   nishad,
   sam,
   shabeeha,
+  dilfa,
+  jaseer,
+  naajiya,
+  rinshad,
 ];
 
 const Placements = () => {
@@ -88,7 +96,7 @@ const Placements = () => {
             <div className={styles.marqueeTrack} style={{ '--duration': '15s' }}>
               {Array.from({ length: 4 }).map((_, groupIndex) => (
                 <div key={`r1-group-${groupIndex}`} className={styles.marqueeGroup} aria-hidden={groupIndex > 0 ? "true" : undefined}>
-                  {placementImages.slice(0, 5).map((image, index) => (
+                  {placementImages.slice(0, 7).map((image, index) => (
                     <figure 
                       key={`r1-${groupIndex}-${index}`} 
                       ref={groupIndex === 0 && index === 0 ? firstCardRef : null} 
@@ -109,7 +117,7 @@ const Placements = () => {
             >
               {Array.from({ length: 4 }).map((_, groupIndex) => (
                 <div key={`r2-group-${groupIndex}`} className={styles.marqueeGroup} aria-hidden={groupIndex > 0 ? "true" : undefined}>
-                  {placementImages.slice(5).map((image, index) => (
+                  {placementImages.slice(7).map((image, index) => (
                     <figure key={`r2-${groupIndex}-${index}`} className={styles.card}>
                       <img src={image} alt={`Placement Row 2 ${index + 1}`} className={styles.image} />
                     </figure>

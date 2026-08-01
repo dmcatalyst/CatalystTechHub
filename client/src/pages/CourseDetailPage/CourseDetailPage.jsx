@@ -385,12 +385,14 @@ const CourseDetailPage = ({ navigate }) => {
                   className={styles.mobileHeroBtnOutline}
                   onClick={() => {
                     if (course?.syllabusLink) {
-                      const link = document.createElement('a');
-                      link.href = course.syllabusLink;
-                      link.download = `${course.title.replace(/\s+/g, '-')}-Syllabus.pdf`;
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
+                      window.dispatchEvent(new CustomEvent('openModal', {
+                        detail: {
+                          type: 'syllabus',
+                          courseTitle: course.title,
+                          syllabusLink: course.syllabusLink,
+                          syllabusName: `${course.title.replace(/\\s+/g, '-')}-Syllabus.pdf`
+                        }
+                      }));
                     } else {
                       handleOpenModal('callback');
                     }

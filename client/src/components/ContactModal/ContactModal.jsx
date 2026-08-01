@@ -4,7 +4,7 @@ import { Turnstile } from '@marsidev/react-turnstile';
 import { getUTMs } from '../../utils/getUTMs';
 import styles from './ContactModal.module.css';
 
-const ContactModal = ({ isOpen, onClose, type = 'callback', courseTitle = '', navigate }) => {
+const ContactModal = ({ isOpen, onClose, type = 'callback', courseTitle = '', syllabusLink = '', syllabusName = '', navigate }) => {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -63,6 +63,14 @@ const ContactModal = ({ isOpen, onClose, type = 'callback', courseTitle = '', na
       }
 
       setIsSuccess(true);
+      if (type === 'syllabus' && syllabusLink) {
+        const link = document.createElement('a');
+        link.href = syllabusLink;
+        link.download = syllabusName || 'Syllabus.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
       setTimeout(() => {
         onClose();
         navigate('/thank-you');
@@ -87,11 +95,13 @@ const ContactModal = ({ isOpen, onClose, type = 'callback', courseTitle = '', na
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
         <button className={styles.modalClose} onClick={onClose}>×</button>
         <div className={styles.modalHeader}>
-          <h3>{type === 'enroll' ? `Enroll in ${courseTitle || 'Course'}` : 'Request a Callback'}</h3>
+          <h3>{type === 'enroll' ? `Enroll in ${courseTitle || 'Course'}` : type === 'syllabus' ? `Download ${courseTitle || 'Course'} Syllabus` : 'Request a Callback'}</h3>
           <p>
             {type === 'enroll' 
               ? 'Fill out the form below and our counselor will contact you shortly.'
-              : 'Leave your details and our expert will call you back.'}
+              : type === 'syllabus'
+                ? 'Please provide your details to download the syllabus.'
+                : 'Leave your details and our expert will call you back.'}
           </p>
         </div>
         
@@ -126,7 +136,7 @@ const ContactModal = ({ isOpen, onClose, type = 'callback', courseTitle = '', na
               />
             </div>
             <button type="submit" className={styles.modalSubmitBtn} disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : (type === 'enroll' ? 'Submit Application' : 'Request Callback')}
+              {isSubmitting ? 'Submitting...' : (type === 'enroll' ? 'Submit Application' : type === 'syllabus' ? 'Download Syllabus' : 'Request Callback')}
             </button>
           </form>
         )}

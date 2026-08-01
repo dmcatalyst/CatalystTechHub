@@ -4,9 +4,212 @@ import list3 from '../assets/CourseListing/list3.jpeg'
 import list4 from '../assets/CourseListing/list4.jpeg'
 
 export const courses = [
-
 {
   id: 1,
+  slug: "data-analytics-with-generative-ai",
+  title: "Data Analytics with Gen AI",
+  location: "Calicut",
+  desc: "Master Data Analytics and Generative AI by learning data collection, cleaning, visualization, statistical analysis, SQL, Python, Power BI, Excel, machine learning fundamentals, and AI-powered analytics. Gain hands-on experience with real-world datasets, dashboards, and Generative AI tools to become an industry-ready Data Analyst.",
+  overviewBodyText: "Transform data into meaningful insights and leverage the power of artificial intelligence to solve real world business challenges. The data analytics with generative ai course is designed to help the learners build strong analytical skills by combining modern data analytics techniques, with the practical use of generative ai tools.\n\nGain hands-on experience with real-world datasets, dashboards, and Generative AI tools to become an industry-ready Data Analyst.",
+  duration: "6 months",
+  fee: "₹89,999",
+  rating: "4.9",
+  reviews: "5.1k",
+  img: list2,
+  syllabusLink: "/pdfs/Data-Analytics-brochure.pdf",
+
+  whatYouWillLearn: [
+    {
+      id: 1,
+      icon: "📊",
+      title: "Data Analytics Fundamentals",
+      desc: "Understand the complete data analytics lifecycle including data collection, cleaning, transformation, and interpretation."
+    },
+    {
+      id: 2,
+      icon: "📈",
+      title: "Advanced Excel",
+      desc: "Master formulas, pivot tables, dashboards, charts, Power Query, and data analysis techniques in Microsoft Excel."
+    },
+    {
+      id: 3,
+      icon: "🗄️",
+      title: "SQL & Database Management",
+      desc: "Learn SQL queries, joins, stored procedures, views, indexing, and relational database concepts."
+    },
+    {
+      id: 4,
+      icon: "🐍",
+      title: "Python for Data Analytics",
+      desc: "Analyze and manipulate data using Python along with NumPy, Pandas, and data visualization libraries."
+    },
+    {
+      id: 5,
+      icon: "📉",
+      title: "Power BI & Data Visualization",
+      desc: "Create interactive dashboards, reports, KPIs, and business intelligence solutions using Power BI."
+    },
+    {
+      id: 6,
+      icon: "🤖",
+      title: "Generative AI for Analytics",
+      desc: "Leverage ChatGPT, Microsoft Copilot, Gemini, and other AI tools to automate analysis, reporting, and insights."
+    },
+    {
+      id: 7,
+      icon: "🧠",
+      title: "Machine Learning Basics",
+      desc: "Understand core machine learning concepts, predictive analytics, and model evaluation techniques."
+    },
+    {
+      id: 8,
+      icon: "💼",
+      title: "Industry Projects & Career Preparation",
+      desc: "Build real-world analytics dashboards, AI-powered reporting solutions, portfolio projects, and prepare for interviews."
+    }
+  ],
+
+  tools: [
+    { name: "Microsoft Excel", icon: "📊" },
+    { name: "SQL", icon: "🗄️" },
+    { name: "MySQL", icon: "🐬" },
+    { name: "Python", icon: "🐍" },
+    { name: "NumPy", icon: "🔢" },
+    { name: "Pandas", icon: "🐼" },
+    { name: "Matplotlib", icon: "📈" },
+    { name: "Seaborn", icon: "📉" },
+    { name: "Power BI", icon: "📊" },
+    { name: "Tableau", icon: "📋" },
+    { name: "Jupyter Notebook", icon: "📒" },
+    { name: "Google Colab", icon: "☁️" },
+    { name: "ChatGPT", icon: "🤖" },
+    { name: "Microsoft Copilot", icon: "🪄" },
+    { name: "Google Gemini", icon: "✨" },
+    { name: "Git & GitHub", icon: "🔀" }
+  ],
+
+  curriculum: [
+    {
+      module: "Introduction to Data Analytics",
+      topics: [
+        "What is Data Analytics?",
+        "Data Analytics Lifecycle",
+        "Types of Analytics",
+        "Business Intelligence",
+        "Data Sources",
+        "Data Collection",
+        "Data Cleaning",
+        "Analytics Workflow"
+      ]
+    },
+    {
+      module: "Advanced Microsoft Excel",
+      topics: [
+        "Excel Functions",
+        "Logical Functions",
+        "Lookup Functions",
+        "Pivot Tables",
+        "Pivot Charts",
+        "Power Query",
+        "Dashboards",
+        "Data Validation"
+      ]
+    },
+    {
+      module: "SQL & Relational Databases",
+      topics: [
+        "Database Concepts",
+        "SQL Basics",
+        "CRUD Operations",
+        "Joins",
+        "Grouping & Aggregation",
+        "Subqueries",
+        "Views",
+        "Stored Procedures"
+      ]
+    },
+    {
+      module: "Python for Data Analytics",
+      topics: [
+        "Python Fundamentals",
+        "NumPy",
+        "Pandas",
+        "Data Cleaning",
+        "Data Transformation",
+        "Data Visualization",
+        "File Handling",
+        "Exploratory Data Analysis"
+      ]
+    },
+    {
+      module: "Data Visualization with Power BI",
+      topics: [
+        "Power BI Desktop",
+        "Data Import",
+        "Data Modeling",
+        "DAX Basics",
+        "Interactive Dashboards",
+        "Reports",
+        "KPIs",
+        "Publishing Reports"
+      ]
+    },
+    {
+      module: "Statistics for Data Analytics",
+      topics: [
+        "Descriptive Statistics",
+        "Probability",
+        "Sampling",
+        "Correlation",
+        "Regression",
+        "Hypothesis Testing",
+        "Outlier Detection",
+        "Business Insights"
+      ]
+    },
+    {
+      module: "Generative AI for Data Analytics",
+      topics: [
+        "Introduction to Generative AI",
+        "Prompt Engineering",
+        "ChatGPT for Analytics",
+        "Microsoft Copilot",
+        "Google Gemini",
+        "AI-Assisted Data Cleaning",
+        "Automated Report Generation",
+        "AI Productivity Workflows"
+      ]
+    },
+    {
+      module: "Machine Learning Fundamentals",
+      topics: [
+        "Introduction to Machine Learning",
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Regression",
+        "Classification",
+        "Clustering",
+        "Model Evaluation",
+        "Business Use Cases"
+      ]
+    },
+    {
+      module: "Capstone Project & Career Preparation",
+      topics: [
+        "Business Case Study",
+        "End-to-End Analytics Project",
+        "Dashboard Development",
+        "AI-Powered Reporting",
+        "Portfolio Building",
+        "Resume Preparation",
+        "Interview Preparation",
+        "Project Presentation"
+      ]
+    }
+  ]
+},
+{
+  id: 2,
   slug: "python-full-stack-development-with-devops",
   title: "Python Full Stack Development with DevOps",
   location: "Calicut",
@@ -228,210 +431,6 @@ export const courses = [
 },
 
 {
-  id: 2,
-  slug: "data-analytics-with-generative-ai",
-  title: "Data Analytics with Gen AI",
-  location: "Calicut",
-  desc: "Master Data Analytics and Generative AI by learning data collection, cleaning, visualization, statistical analysis, SQL, Python, Power BI, Excel, machine learning fundamentals, and AI-powered analytics. Gain hands-on experience with real-world datasets, dashboards, and Generative AI tools to become an industry-ready Data Analyst.",
-  overviewBodyText: "Transform data into meaningful insights and leverage the power of artificial intelligence to solve real world business challenges. The data analytics with generative ai course is designed to help the learners build strong analytical skills by combining modern data analytics techniques, with the practical use of generative ai tools.\n\nGain hands-on experience with real-world datasets, dashboards, and Generative AI tools to become an industry-ready Data Analyst.",
-  duration: "6 months",
-  fee: "₹89,999",
-  rating: "4.9",
-  reviews: "5.1k",
-  img: list2,
-  syllabusLink: "/pdfs/Data-Analytics-brochure.pdf",
-
-  whatYouWillLearn: [
-    {
-      id: 1,
-      icon: "📊",
-      title: "Data Analytics Fundamentals",
-      desc: "Understand the complete data analytics lifecycle including data collection, cleaning, transformation, and interpretation."
-    },
-    {
-      id: 2,
-      icon: "📈",
-      title: "Advanced Excel",
-      desc: "Master formulas, pivot tables, dashboards, charts, Power Query, and data analysis techniques in Microsoft Excel."
-    },
-    {
-      id: 3,
-      icon: "🗄️",
-      title: "SQL & Database Management",
-      desc: "Learn SQL queries, joins, stored procedures, views, indexing, and relational database concepts."
-    },
-    {
-      id: 4,
-      icon: "🐍",
-      title: "Python for Data Analytics",
-      desc: "Analyze and manipulate data using Python along with NumPy, Pandas, and data visualization libraries."
-    },
-    {
-      id: 5,
-      icon: "📉",
-      title: "Power BI & Data Visualization",
-      desc: "Create interactive dashboards, reports, KPIs, and business intelligence solutions using Power BI."
-    },
-    {
-      id: 6,
-      icon: "🤖",
-      title: "Generative AI for Analytics",
-      desc: "Leverage ChatGPT, Microsoft Copilot, Gemini, and other AI tools to automate analysis, reporting, and insights."
-    },
-    {
-      id: 7,
-      icon: "🧠",
-      title: "Machine Learning Basics",
-      desc: "Understand core machine learning concepts, predictive analytics, and model evaluation techniques."
-    },
-    {
-      id: 8,
-      icon: "💼",
-      title: "Industry Projects & Career Preparation",
-      desc: "Build real-world analytics dashboards, AI-powered reporting solutions, portfolio projects, and prepare for interviews."
-    }
-  ],
-
-  tools: [
-    { name: "Microsoft Excel", icon: "📊" },
-    { name: "SQL", icon: "🗄️" },
-    { name: "MySQL", icon: "🐬" },
-    { name: "Python", icon: "🐍" },
-    { name: "NumPy", icon: "🔢" },
-    { name: "Pandas", icon: "🐼" },
-    { name: "Matplotlib", icon: "📈" },
-    { name: "Seaborn", icon: "📉" },
-    { name: "Power BI", icon: "📊" },
-    { name: "Tableau", icon: "📋" },
-    { name: "Jupyter Notebook", icon: "📒" },
-    { name: "Google Colab", icon: "☁️" },
-    { name: "ChatGPT", icon: "🤖" },
-    { name: "Microsoft Copilot", icon: "🪄" },
-    { name: "Google Gemini", icon: "✨" },
-    { name: "Git & GitHub", icon: "🔀" }
-  ],
-
-  curriculum: [
-    {
-      module: "Introduction to Data Analytics",
-      topics: [
-        "What is Data Analytics?",
-        "Data Analytics Lifecycle",
-        "Types of Analytics",
-        "Business Intelligence",
-        "Data Sources",
-        "Data Collection",
-        "Data Cleaning",
-        "Analytics Workflow"
-      ]
-    },
-    {
-      module: "Advanced Microsoft Excel",
-      topics: [
-        "Excel Functions",
-        "Logical Functions",
-        "Lookup Functions",
-        "Pivot Tables",
-        "Pivot Charts",
-        "Power Query",
-        "Dashboards",
-        "Data Validation"
-      ]
-    },
-    {
-      module: "SQL & Relational Databases",
-      topics: [
-        "Database Concepts",
-        "SQL Basics",
-        "CRUD Operations",
-        "Joins",
-        "Grouping & Aggregation",
-        "Subqueries",
-        "Views",
-        "Stored Procedures"
-      ]
-    },
-    {
-      module: "Python for Data Analytics",
-      topics: [
-        "Python Fundamentals",
-        "NumPy",
-        "Pandas",
-        "Data Cleaning",
-        "Data Transformation",
-        "Data Visualization",
-        "File Handling",
-        "Exploratory Data Analysis"
-      ]
-    },
-    {
-      module: "Data Visualization with Power BI",
-      topics: [
-        "Power BI Desktop",
-        "Data Import",
-        "Data Modeling",
-        "DAX Basics",
-        "Interactive Dashboards",
-        "Reports",
-        "KPIs",
-        "Publishing Reports"
-      ]
-    },
-    {
-      module: "Statistics for Data Analytics",
-      topics: [
-        "Descriptive Statistics",
-        "Probability",
-        "Sampling",
-        "Correlation",
-        "Regression",
-        "Hypothesis Testing",
-        "Outlier Detection",
-        "Business Insights"
-      ]
-    },
-    {
-      module: "Generative AI for Data Analytics",
-      topics: [
-        "Introduction to Generative AI",
-        "Prompt Engineering",
-        "ChatGPT for Analytics",
-        "Microsoft Copilot",
-        "Google Gemini",
-        "AI-Assisted Data Cleaning",
-        "Automated Report Generation",
-        "AI Productivity Workflows"
-      ]
-    },
-    {
-      module: "Machine Learning Fundamentals",
-      topics: [
-        "Introduction to Machine Learning",
-        "Supervised Learning",
-        "Unsupervised Learning",
-        "Regression",
-        "Classification",
-        "Clustering",
-        "Model Evaluation",
-        "Business Use Cases"
-      ]
-    },
-    {
-      module: "Capstone Project & Career Preparation",
-      topics: [
-        "Business Case Study",
-        "End-to-End Analytics Project",
-        "Dashboard Development",
-        "AI-Powered Reporting",
-        "Portfolio Building",
-        "Resume Preparation",
-        "Interview Preparation",
-        "Project Presentation"
-      ]
-    }
-  ]
-},
-{
   id: 3,
   slug: "cyber-security",
   title: "Cyber Security",
@@ -634,212 +633,5 @@ export const courses = [
     }
   ]
 },
-{
-  id: 4,
-  slug: "mern-stack-development",
-  title: "MERN Stack Development",
-  location: "Calicut",
-  desc: "Become a professional Full Stack JavaScript Developer by mastering MongoDB, Express.js, React.js, and Node.js. Learn frontend development, REST APIs, authentication, state management, cloud deployment, and DevOps fundamentals while building real-world full stack applications from scratch.",
-  overviewBodyText: "Build dynamic, responsive, and scalable web applications using one of the most in-demand javascript technology stack. The MERN Stack development provides comprehensive training in MongoDB, Express.js, React.js Node.js, equipping learners with the skills to develop modern full stack web applications from conception to development.\n\nDesigned with practical project based approach, the course enables learners to build industry relevant applications, work with RESTful APIs, Manage databases and deploy applications using modern development tools and workflows.",
-  duration: "8 months",
-  fee: "₹94,999",
-  rating: "4.9",
-  reviews: "4.5k",
-  img: list1,
-  syllabusLink: "/pdfs/New-Mern-stack.pdf",
 
-  whatYouWillLearn: [
-    {
-      id: 1,
-      icon: "🌐",
-      title: "Frontend Development",
-      desc: "Build responsive and interactive websites using HTML5, CSS3, Bootstrap, Tailwind CSS, and modern JavaScript."
-    },
-    {
-      id: 2,
-      icon: "⚛️",
-      title: "React.js Development",
-      desc: "Develop modern Single Page Applications using React, Hooks, Routing, Context API, Redux Toolkit, and API integration."
-    },
-    {
-      id: 3,
-      icon: "🟢",
-      title: "Node.js & Express.js",
-      desc: "Create scalable backend applications, RESTful APIs, authentication systems, and server-side logic."
-    },
-    {
-      id: 4,
-      icon: "🍃",
-      title: "MongoDB Database",
-      desc: "Design NoSQL databases, perform CRUD operations, aggregation, indexing, and database optimization."
-    },
-    {
-      id: 5,
-      icon: "🔐",
-      title: "Authentication & Security",
-      desc: "Implement JWT authentication, authorization, password encryption, validation, and security best practices."
-    },
-    {
-      id: 6,
-      icon: "☁️",
-      title: "Deployment & Cloud",
-      desc: "Deploy full stack applications using Vercel, Render, MongoDB Atlas, AWS, Docker, and Nginx."
-    },
-    {
-      id: 7,
-      icon: "🐳",
-      title: "DevOps Fundamentals",
-      desc: "Learn Git, GitHub, Docker, CI/CD pipelines, Linux basics, and modern deployment workflows."
-    },
-    {
-      id: 8,
-      icon: "💼",
-      title: "Industry Projects & Career Preparation",
-      desc: "Build portfolio-ready projects, prepare for coding interviews, and become job-ready as a MERN Stack Developer."
-    }
-  ],
-
-  tools: [
-    { name: "HTML5", icon: "🌐" },
-    { name: "CSS3", icon: "🎨" },
-    { name: "Bootstrap", icon: "🅱️" },
-    { name: "Tailwind CSS", icon: "💨" },
-    { name: "JavaScript", icon: "🟨" },
-    { name: "React", icon: "⚛️" },
-    { name: "Redux Toolkit", icon: "🧰" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Express.js", icon: "🚀" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Mongoose", icon: "📄" },
-    { name: "JWT", icon: "🔐" },
-    { name: "Git", icon: "🔀" },
-    { name: "GitHub", icon: "🐙" },
-    { name: "Docker", icon: "🐳" },
-    { name: "AWS", icon: "☁️" },
-    { name: "Postman", icon: "📮" },
-    { name: "VS Code", icon: "💻" },
-    { name: "Linux", icon: "🐧" },
-    { name: "Nginx", icon: "🌐" }
-  ],
-
-  curriculum: [
-    {
-      module: "Web Development Fundamentals",
-      topics: [
-        "HTML5",
-        "CSS3",
-        "Flexbox & Grid",
-        "Bootstrap",
-        "Tailwind CSS",
-        "Responsive Design",
-        "JavaScript ES6+",
-        "DOM Manipulation"
-      ]
-    },
-    {
-      module: "Modern JavaScript",
-      topics: [
-        "Variables & Functions",
-        "Objects & Arrays",
-        "Promises",
-        "Async/Await",
-        "Fetch API",
-        "Modules",
-        "Error Handling",
-        "ES6 Features"
-      ]
-    },
-    {
-      module: "React.js Development",
-      topics: [
-        "React Fundamentals",
-        "JSX",
-        "Components",
-        "Props & State",
-        "React Hooks",
-        "React Router",
-        "Context API",
-        "Redux Toolkit"
-      ]
-    },
-    {
-      module: "Backend Development with Node.js & Express",
-      topics: [
-        "Node.js Basics",
-        "Express.js",
-        "REST APIs",
-        "Middleware",
-        "Authentication",
-        "JWT",
-        "File Uploads",
-        "Error Handling"
-      ]
-    },
-    {
-      module: "MongoDB & Mongoose",
-      topics: [
-        "MongoDB Basics",
-        "Collections & Documents",
-        "CRUD Operations",
-        "Mongoose ODM",
-        "Schema Design",
-        "Aggregation",
-        "Indexing",
-        "Database Optimization"
-      ]
-    },
-    {
-      module: "Authentication & API Security",
-      topics: [
-        "User Authentication",
-        "JWT Tokens",
-        "Password Hashing",
-        "Authorization",
-        "Input Validation",
-        "Role-Based Access",
-        "API Security",
-        "Environment Variables"
-      ]
-    },
-    {
-      module: "DevOps & Deployment",
-      topics: [
-        "Git & GitHub",
-        "Linux Basics",
-        "Docker",
-        "Docker Compose",
-        "CI/CD Fundamentals",
-        "Vercel Deployment",
-        "Render Deployment",
-        "Nginx Configuration"
-      ]
-    },
-    {
-      module: "Cloud & Production Deployment",
-      topics: [
-        "MongoDB Atlas",
-        "AWS Basics",
-        "Domain Configuration",
-        "SSL Setup",
-        "Environment Management",
-        "Performance Optimization",
-        "Application Monitoring",
-        "Production Best Practices"
-      ]
-    },
-    {
-      module: "Capstone Project & Career Preparation",
-      topics: [
-        "E-Commerce Project",
-        "Full Stack CRUD Application",
-        "REST API Integration",
-        "Portfolio Building",
-        "GitHub Portfolio",
-        "Resume Preparation",
-        "Interview Preparation",
-        "Project Presentation"
-      ]
-    }
-  ]
-},
 ];

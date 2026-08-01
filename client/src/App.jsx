@@ -64,7 +64,9 @@ export default function App() {
   const [modalConfig, setModalConfig] = useState({
     isOpen: false,
     type: 'callback',
-    courseTitle: ''
+    courseTitle: '',
+    syllabusLink: '',
+    syllabusName: ''
   });
 
   useEffect(() => {
@@ -72,7 +74,9 @@ export default function App() {
       setModalConfig({
         isOpen: true,
         type: e.detail.type || 'callback',
-        courseTitle: e.detail.courseTitle || ''
+        courseTitle: e.detail.courseTitle || '',
+        syllabusLink: e.detail.syllabusLink || '',
+        syllabusName: e.detail.syllabusName || ''
       });
     };
     window.addEventListener('openModal', handleOpenModal);
@@ -187,6 +191,8 @@ export default function App() {
         onClose={() => setModalConfig(prev => ({ ...prev, isOpen: false }))}
         type={modalConfig.type}
         courseTitle={modalConfig.courseTitle}
+        syllabusLink={modalConfig.syllabusLink}
+        syllabusName={modalConfig.syllabusName}
         navigate={navigate}
       />
     </>

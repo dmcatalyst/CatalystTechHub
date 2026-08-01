@@ -4,6 +4,5 @@ export const courseOptions = [
   "Cyber Security",
   "Data Analatics",
   "Python Programming",
-  "Mern Stack",
   "Other / Not Sure Yet",
 ];
