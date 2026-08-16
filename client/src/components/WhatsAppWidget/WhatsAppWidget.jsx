@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './WhatsAppWidget.module.css';
 
-const PHONE = '919778771175';
+const PHONE = '919037946833';
 
 export default function WhatsAppWidget() {
   const [open, setOpen] = useState(false);
