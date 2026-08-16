@@ -424,7 +424,7 @@ const CourseDetailPage = ({ navigate }) => {
               <div className={styles.infoDivider}></div>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Next Batch Starts</span>
-                <span className={styles.infoValue}>18 - June - 2026</span>
+                <span className={styles.infoValue}>in a few weeks</span>
               </div>
             </div>
               </div>

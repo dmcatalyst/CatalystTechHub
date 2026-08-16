@@ -25,3 +25,5 @@ client/.env.*
 Thumbs.db
 
 venv
+
+package-lock.json
